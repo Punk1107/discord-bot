@@ -34,7 +34,7 @@ import re
 import signal
 import psutil
 from datetime import datetime, timedelta, timezone
-from typing import Optional, Dict, List, Any, Tuple, Union
+from typing import Optional, Dict, List, Any, Tuple, Union, Set
 from dataclasses import dataclass, field, asdict
 from enum import Enum, IntEnum
 from pathlib import Path
@@ -63,7 +63,7 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Spotify Integration (will be checked after logger is set up)
+# ==================== Spotify Integration ====================
 SPOTIFY_AVAILABLE = False
 try:
     import spotipy
@@ -81,7 +81,7 @@ APP_ID = int(os.getenv("APP_ID")) if os.getenv("APP_ID") else None
 # Spotify Configuration
 SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
 SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///musicbot.db")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./musicbot.db")
 
 # Bot Limits & Settings
 MAX_QUEUE_SIZE = int(os.getenv("MAX_QUEUE_SIZE", "100"))
@@ -115,18 +115,14 @@ class ColoredFormatter(logging.Formatter):
         record.name = f"\033[94m{record.name:<15}{self.RESET}"
         return super().format(record)
 
-# Setup enhanced logging
 def setup_logging():
     """Setup comprehensive logging system"""
-
-    # Create logs directory
     os.makedirs("logs", exist_ok=True)
 
-    # Main logger
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
 
-    # Console handler with colors
+    # Console handler
     console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setLevel(logging.INFO)
     console_formatter = ColoredFormatter(
@@ -144,7 +140,7 @@ def setup_logging():
     )
     file_handler.setFormatter(file_formatter)
 
-    # Error file handler
+    # File handler for errors only
     error_handler = logging.FileHandler('logs/errors.log', encoding='utf-8')
     error_handler.setLevel(logging.ERROR)
     error_handler.setFormatter(file_formatter)
@@ -154,7 +150,7 @@ def setup_logging():
     logger.addHandler(file_handler)
     logger.addHandler(error_handler)
 
-    # Reduce Discord library noise
+    # Reduce noise
     logging.getLogger('discord').setLevel(logging.WARNING)
     logging.getLogger('discord.voice_state').setLevel(logging.ERROR)
     logging.getLogger('asyncio').setLevel(logging.WARNING)
@@ -163,10 +159,10 @@ def setup_logging():
 setup_logging()
 logger = logging.getLogger(__name__)
 
-# Log Spotify status after logger is initialized
+# Log Spotify status
 if not SPOTIFY_AVAILABLE:
     logger.warning("Spotipy not installed. Spotify features will be disabled. Install with: pip install spotipy")
-elif not (os.getenv("SPOTIFY_CLIENT_ID") and os.getenv("SPOTIFY_CLIENT_SECRET")):
+elif not (SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET):
     logger.warning("Spotify credentials not configured. Spotify features will be limited.")
 
 # ==================== Enums & Data Classes ====================
@@ -265,29 +261,77 @@ class ServerConfig:
 # ==================== Database Manager ====================
 
 class DatabaseManager:
-    def __init__(self, database_url: str):
+    def __init__(self, database_url: str, max_connections: int = 5):
+        """
+        :param database_url: URL ของ SQLite เช่น sqlite:///./database.db
+        :param max_connections: จำนวน connection สูงสุดใน pool
+        """
         self.database_url = database_url.replace("sqlite:///", "")
-        self._connection_pool = weakref.WeakSet()
+        self._max_connections = max_connections
+        self._connection_pool: Set[aiosqlite.Connection] = set()
+        self._used_connections: Set[aiosqlite.Connection] = set()
 
-    async def get_connection(self):
-        """Get database connection with connection pooling"""
-        try:
-            conn = await aiosqlite.connect(self.database_url)
-            await conn.execute("PRAGMA journal_mode=WAL")
-            await conn.execute("PRAGMA synchronous=NORMAL")
-            await conn.execute("PRAGMA cache_size=10000")
-            await conn.execute("PRAGMA temp_store=MEMORY")
-            self._connection_pool.add(conn)
+    async def get_connection(self) -> aiosqlite.Connection:
+        """
+        Get a database connection from pool. Reuse if possible, else create new.
+        """
+        # Reuse available connection
+        for conn in self._connection_pool - self._used_connections:
+            self._used_connections.add(conn)
             return conn
-        except Exception as e:
-            logger.error(f"Database connection failed: {e}")
-            raise
+
+        # Create new connection if pool not full
+        if len(self._connection_pool) < self._max_connections:
+            try:
+                conn = await aiosqlite.connect(self.database_url)
+                await conn.execute("PRAGMA journal_mode=WAL;")
+                await conn.execute("PRAGMA synchronous=NORMAL;")
+                await conn.execute("PRAGMA cache_size=10000;")
+                await conn.execute("PRAGMA temp_store=MEMORY;")
+                self._connection_pool.add(conn)
+                self._used_connections.add(conn)
+                return conn
+            except aiosqlite.OperationalError as e:
+                logger.error(f"Database operational error: {e}")
+                raise
+            except Exception as e:
+                logger.error(f"Unexpected database error: {e}")
+                raise
+        else:
+            raise RuntimeError("No available database connections in pool")
+
+    async def release_connection(self, conn: aiosqlite.Connection):
+        """
+        Release connection back to pool
+        """
+        if conn in self._used_connections:
+            self._used_connections.remove(conn)
+
+    async def close_all_connections(self):
+        """
+        Close all connections in pool
+        """
+        for conn in list(self._connection_pool):
+            try:
+                await conn.close()
+            except Exception as e:
+                logger.warning(f"Error closing connection: {e}")
+        self._connection_pool.clear()
+        self._used_connections.clear()
+        logger.info("✅ All database connections closed")
 
     async def initialize(self):
-        """Initialize database with enhanced schema"""
+        """
+        Initialize database with enhanced schema and schema versioning
+        """
         try:
             async with aiosqlite.connect(self.database_url) as conn:
                 await conn.executescript("""
+                    CREATE TABLE IF NOT EXISTS schema_version (
+                        version INTEGER PRIMARY KEY,
+                        applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                    );
+
                     CREATE TABLE IF NOT EXISTS queue (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         guild_id INTEGER NOT NULL,
@@ -358,6 +402,35 @@ class DatabaseManager:
         except Exception as e:
             logger.error(f"Database initialization failed: {e}")
             raise
+
+    # ==================== Helper Methods ====================
+    async def add_favorite_track(self, user_id: int, guild_id: int, track_data: str):
+        """
+        Add track to user's favorite_tracks
+        """
+        conn = await self.get_connection()
+        try:
+            cursor = await conn.execute(
+                "SELECT favorite_tracks FROM user_stats WHERE user_id=? AND guild_id=?",
+                (user_id, guild_id)
+            )
+            row = await cursor.fetchone()
+            if row:
+                fav_tracks = json.loads(row[0])
+            else:
+                fav_tracks = []
+
+            if track_data not in fav_tracks:
+                fav_tracks.append(track_data)
+                fav_json = json.dumps(fav_tracks)
+                await conn.execute(
+                    "INSERT INTO user_stats (user_id, guild_id, favorite_tracks) VALUES (?, ?, ?) "
+                    "ON CONFLICT(user_id, guild_id) DO UPDATE SET favorite_tracks=?",
+                    (user_id, guild_id, fav_json, fav_json)
+                )
+                await conn.commit()
+        finally:
+            await self.release_connection(conn)
 
 
 # ==================== Spotify Extractor ====================
