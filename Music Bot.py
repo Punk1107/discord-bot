@@ -43,6 +43,8 @@ import hashlib
 import secrets
 import weakref
 import gc
+from functools import lru_cache
+import unicodedata
 import webserver
 
 # Discord & Bot Framework
@@ -53,7 +55,7 @@ import aiohttp
 
 # YouTube Processing
 import yt_dlp
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse, parse_qs, unquote
 
 # Configuration & Environment
 from dotenv import load_dotenv
@@ -756,11 +758,14 @@ class YouTubeExtractor:
             logger.error(f"Playlist extraction failed: {e}")
             return []
 
-# ==================== URL Validation & Direct Audio Helpers ====================
+# ================================= Constants =================================
 
-SAFE_AUDIO_EXTS = ('.mp3', '.aac', '.m4a', '.flac', '.wav', '.ogg', '.opus', '.webm', '.mka', '.m3u8')
+SAFE_AUDIO_EXTS = (
+    '.mp3', '.aac', '.m4a', '.flac', '.wav', '.ogg', '.opus', '.webm', '.mka', '.m3u8'
+)
 
-BANNED_PATTERNS = [
+# Precompiled banned patterns with word boundaries (reduce false positives)
+_RAW_BANNED_PATTERNS = [
     r'porn', r'xxx', r'nsfw', r'xnxx', r'xvideo', r'xvideos', r'pornhub', r'redtube', r'xhamster', r'youporn',
     r'spankbang', r'nhentai', r'e-hentai', r'avgle', r'fakku', r'rule34', r'หนังโป๊', r'ผู้ใหญ่', r'18\+',
     r'camgirl', r'onlyfans', r'chaturbate', r'myfreecams', r'bongacams', r'cam4',
@@ -769,8 +774,8 @@ BANNED_PATTERNS = [
     r'bet365', r'betway', r'22bet', r'stake', r'w88', r'm88', r'dafabet', r'fun88',
     r'123movies', r'fmovies', r'gomovies', r'putlocker', r'solarmovie', r'kissasian', r'9anime', r'aniwave', r'soap2day', r'bflix'
 ]
+BANNED_PATTERNS = [re.compile(rf'\b{p}\b', re.IGNORECASE) for p in _RAW_BANNED_PATTERNS]
 
-# Explicit banned domains (match by exact or subdomain)
 BANNED_DOMAINS = {
     # Pornographic
     'pornhub.com', 'xvideos.com', 'xnxx.com', 'redtube.com', 'youporn.com', 'xhamster.com', 'spankbang.com',
@@ -780,16 +785,18 @@ BANNED_DOMAINS = {
     '1xbet.com', 'sbobet.com', 'ufabet.com', 'dafabet.com', 'fun88.com', 'm88.com', 'w88.com',
     'bet365.com', 'betway.com', '22bet.com', 'stake.com',
     # Piracy/illegal streaming
-    'fmovies.to', '123movies.to', 'gomovies.to', 'putlocker.is', 'solarmovie.to', 'kissanime.ru', 'kissasian.sh', '9anime.to', 'aniwave.to', 'soap2day.rs', 'bflix.gg'
+    'fmovies.to', '123movies.to', 'gomovies.to', 'putlocker.is', 'solarmovie.to',
+    'kissanime.ru', 'kissasian.sh', '9anime.to', 'aniwave.to', 'soap2day.rs', 'bflix.gg'
 }
 
-# Block by top-level domain suffixes
 BANNED_TLDS = ('.xxx', '.porn', '.adult', '.sex', '.casino', '.bet')
 
 ALLOWED_PROVIDERS = [
-    'youtube.com', 'www.youtube.com', 'youtu.be', 'music.youtube.com', 'm.youtube.com',
+    'youtube.com', 'youtu.be', 'music.youtube.com', 'm.youtube.com',
     'open.spotify.com', 'spotify.com'
 ]
+
+# ================================= Helpers =================================
 
 def _domain_of(url: str) -> str:
     try:
@@ -797,36 +804,60 @@ def _domain_of(url: str) -> str:
     except Exception:
         return ''
 
-def is_banned_url(url: str) -> bool:
+def _is_subdomain(domain: str, target: str) -> bool:
+    return domain == target or domain.endswith('.' + target)
+
+# ================================= URL Checks =================================
+
+class URLCheckResult:
+    def __init__(self, ok: bool, reason: str = ''):
+        self.ok = ok
+        self.reason = reason
+
+    def __bool__(self):
+        return self.ok
+
+    def __repr__(self):
+        return f"<URLCheckResult ok={self.ok} reason='{self.reason}'>"
+
+def is_banned_url(url: str) -> URLCheckResult:
     u = url.lower()
     d = _domain_of(u)
-    # Keyword/regex based
-    for p in BANNED_PATTERNS:
-        try:
-            if re.search(p, u):
-                return True
-        except re.error:
-            continue
+
+    # 1. Pattern-based check
+    for rgx in BANNED_PATTERNS:
+        if rgx.search(u):
+            return URLCheckResult(True, f"Matched banned pattern '{rgx.pattern}'")
+
+    # 2. Invalid or empty domain
     if not d:
-        return False
-    # Domain and TLD based
+        return URLCheckResult(False)
+
+    # 3. Domain-based check
     for bd in BANNED_DOMAINS:
-        if d == bd or d.endswith('.' + bd):
-            return True
-    # Extra domains from environment (comma-separated)
+        if _is_subdomain(d, bd):
+            return URLCheckResult(True, f"Banned domain '{bd}'")
+
+    # 4. Environment-based banned domains
     extra_env = os.getenv('EXTRA_BANNED_DOMAINS')
     if extra_env:
         for s in extra_env.split(','):
             s = s.strip().lower().lstrip('*.')
-            if s and (d == s or d.endswith('.' + s)):
-                return True
+            if s and _is_subdomain(d, s):
+                return URLCheckResult(True, f"Env banned domain '{s}'")
+
+    # 5. TLD-based check
     if any(d.endswith(tld) for tld in BANNED_TLDS):
-        return True
-    return False
+        return URLCheckResult(True, f"Banned TLD match in '{d}'")
+
+    return URLCheckResult(False)
 
 def is_allowed_provider(url: str) -> bool:
     d = _domain_of(url)
-    return any(host in d for host in ALLOWED_PROVIDERS)
+    for host in ALLOWED_PROVIDERS:
+        if _is_subdomain(d, host):
+            return True
+    return False
 
 def is_direct_audio_by_ext(url: str) -> bool:
     try:
@@ -835,23 +866,52 @@ def is_direct_audio_by_ext(url: str) -> bool:
     except Exception:
         return False
 
+@lru_cache(maxsize=512)
 async def is_audio_content_type(url: str) -> bool:
     try:
         timeout = aiohttp.ClientTimeout(total=6)
         async with aiohttp.ClientSession(timeout=timeout) as session:
             async with session.head(url, allow_redirects=True) as resp:
-                ct = resp.headers.get('Content-Type', '')
-                return 'audio' in ct.lower() or 'mpegurl' in ct.lower() or 'mpeg' in ct.lower()
+                ct = resp.headers.get('Content-Type', '').lower()
+                return any(x in ct for x in ('audio', 'mpegurl', 'mpeg'))
     except Exception:
         return False
 
+# ================================= Filename Helper =================================
+
 def filename_title(url: str) -> str:
     try:
-        path = urlparse(url).path
+        path = unquote(urlparse(url).path)
         name = os.path.basename(path)
-        return re.sub(r'[_-]+', ' ', os.path.splitext(name)[0]) or 'Direct Audio'
+        clean_name = os.path.splitext(name)[0]
+        clean_name = unicodedata.normalize('NFKC', clean_name)
+        clean_name = re.sub(r'[_-]+', ' ', clean_name).strip()
+        if not clean_name:
+            clean_name = 'Direct Audio'
+        return clean_name[:128]  # Limit to 128 chars for safety
     except Exception:
         return 'Direct Audio'
+
+# ================================= Master Validator =================================
+
+async def validate_audio_url(url: str) -> URLCheckResult:
+    """
+    Full pipeline URL validator:
+    1. Check if banned
+    2. Check if allowed provider
+    3. Check if direct audio or valid content type
+    Returns URLCheckResult
+    """
+    banned = is_banned_url(url)
+    if banned.ok:
+        return URLCheckResult(False, f"URL blocked: {banned.reason}")
+
+    if not is_allowed_provider(url):
+        if not is_direct_audio_by_ext(url):
+            if not await is_audio_content_type(url):
+                return URLCheckResult(False, "Not recognized as an audio source")
+
+    return URLCheckResult(True, "URL is safe and valid audio source")
 
 # ==================== Audio Effects Processor ====================
 
