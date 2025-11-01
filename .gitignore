@@ -1,0 +1,23 @@
+# Virtual environment
+.venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Databases
+*.db
+
+# VS Code temp
+*.vscode/
+*.cache
+tempCodeRunnerFile*
+
+# Environment variables
+.env
+
+# OS
+.DS_Store
+

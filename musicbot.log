@@ -1,0 +1,257 @@
+2025-09-28 17:22:21,203 - __main__ - INFO - Starting Enhanced YouTube Music Bot...
+2025-09-28 17:22:22,389 - __main__ - ERROR - Bot setup failed: no such column: position
+2025-09-28 17:22:22,389 - __main__ - ERROR - Bot startup failed: no such column: position
+2025-09-28 17:22:22,395 - __main__ - INFO - Bot closed successfully
+2025-09-28 17:23:55,514 - __main__ - INFO - Starting Enhanced YouTube Music Bot...
+2025-09-28 17:23:56,598 - __main__ - INFO - Database initialized successfully
+2025-09-28 17:23:57,277 - __main__ - INFO - Bot setup completed successfully
+2025-09-28 17:24:00,980 - __main__ - INFO - Bot is ready! Logged in as ALL-FaraSong#9890 (ID: 1193773719219347506)
+2025-09-28 17:24:00,980 - __main__ - INFO - Connected to 6 guilds
+2025-09-28 17:25:37,154 - discord.gateway - WARNING - Can't keep up, shard ID None websocket is 16.9s behind.
+2025-09-28 17:25:43,984 - discord.app_commands.tree - ERROR - Ignoring exception in command 'play'
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1001, in play_command
+    await interaction.response.defer()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\interactions.py", line 858, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'play' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+14:09:15 | __main__        | INFO     | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+14:09:15 | __main__        | INFO     | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+14:09:15 | __main__        | INFO     | 📦 Discord.py: 2.6.3
+14:09:15 | __main__        | INFO     | 🎵 Starting bot connection...
+14:09:16 | __main__        | INFO     | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+14:09:18 | __main__        | ERROR    | ❌ Bot setup failed: no such column: track_id
+14:09:18 | __main__        | ERROR    | ❌ Bot startup failed: no such column: track_id
+14:09:18 | __main__        | INFO     | ✅ Bot closed successfully
+14:09:43 | __main__        | INFO     | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+14:09:43 | __main__        | INFO     | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+14:09:43 | __main__        | INFO     | 📦 Discord.py: 2.6.3
+14:09:43 | __main__        | INFO     | 🎵 Starting bot connection...
+14:09:45 | __main__        | INFO     | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+14:09:45 | __main__        | INFO     | ✅ Database initialized successfully with enhanced schema
+14:09:45 | __main__        | INFO     | ✅ Loaded 0 server configurations
+14:09:45 | __main__        | INFO     | ✅ Synced 12 slash commands
+14:09:45 | __main__        | INFO     | ✅ Bot setup completed successfully in 2.56s
+14:09:49 | __main__        | INFO     | ============================================================
+14:09:49 | __main__        | INFO     | 🎵 Enhanced Music Bot v3.0 is ready!
+14:09:49 | __main__        | INFO     | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+14:09:49 | __main__        | INFO     | 🌐 Connected to 6 guilds
+14:09:49 | __main__        | INFO     | 👥 Serving 142 users
+14:09:49 | __main__        | INFO     | ============================================================
+14:10:13 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/I1YwnCtCp3Q?feature=shared' by Sleepless
+14:10:13 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/I1YwnCtCp3Q?feature=shared
+14:10:39 | __main__        | INFO     | ✅ Successfully extracted track: Faye Peraya - เติมคำว่า"รัก"ลงในช่องว่าง (OFFICIAL MV)
+14:10:39 | __main__        | INFO     | ✅ Added track to queue: Faye Peraya - เติมคำว่า"รัก"ลงในช่องว่าง (OFFICIAL MV)
+14:10:39 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+14:10:39 | __main__        | INFO     | 🎵 Now playing: Faye Peraya - เติมคำว่า"รัก"ลงในช่องว่าง (OFFICIAL MV)
+14:11:53 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/zch6bd3Gfng?feature=shared' by Sleepless
+14:11:53 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/zch6bd3Gfng?feature=shared
+14:12:02 | __main__        | INFO     | ✅ Successfully extracted track: BOWKYLION - ส่วนต่าง (do it without me) [Official Lyrics]
+14:12:02 | __main__        | INFO     | ✅ Added track to queue: BOWKYLION - ส่วนต่าง (do it without me) [Official Lyrics]
+14:14:25 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+14:14:25 | __main__        | INFO     | 🎵 Now playing: BOWKYLION - ส่วนต่าง (do it without me) [Official Lyrics]
+14:14:45 | __main__        | INFO     | 📊 Health Check: 6 guilds, 142 users, 1 playing
+14:17:57 | __main__        | INFO     | 📭 Queue empty for guild 1252561974253064273
+14:18:30 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/I1YwnCtCp3Q?feature=shared' by Sleepless
+14:18:30 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/I1YwnCtCp3Q?feature=shared
+14:18:40 | __main__        | INFO     | ✅ Successfully extracted track: Faye Peraya - เติมคำว่า"รัก"ลงในช่องว่าง (OFFICIAL MV)
+14:18:40 | __main__        | INFO     | ✅ Added track to queue: Faye Peraya - เติมคำว่า"รัก"ลงในช่องว่าง (OFFICIAL MV)
+14:18:41 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+14:18:41 | __main__        | INFO     | 🎵 Now playing: Faye Peraya - เติมคำว่า"รัก"ลงในช่องว่าง (OFFICIAL MV)
+14:19:45 | __main__        | INFO     | 📊 Health Check: 6 guilds, 142 users, 1 playing
+14:22:25 | __main__        | INFO     | 📭 Queue empty for guild 1252561974253064273
+14:22:49 | __main__        | INFO     | 🎵 Play request: 'https://www.youtube.com/watch?v=OK7i2k6AZP8&list=RDOK7i2k6AZP8&start_radio=1' by Sleepless
+14:22:49 | __main__        | INFO     | 🔗 Processing YouTube URL: https://www.youtube.com/watch?v=OK7i2k6AZP8&list=RDOK7i2k6AZP8&start_radio=1
+14:22:58 | __main__        | INFO     | ✅ Successfully extracted track: カラス (Karasu) - free MV (Sub Español, English, Romaji)
+14:22:58 | __main__        | INFO     | ✅ Added track to queue: カラス (Karasu) - free MV (Sub Español, English, Romaji)
+14:22:59 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+14:22:59 | __main__        | INFO     | 🎵 Now playing: カラス (Karasu) - free MV (Sub Español, English, Romaji)
+14:23:43 | __main__        | INFO     | 📭 Queue empty for guild 1252561974253064273
+14:24:23 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/OK7i2k6AZP8?feature=shared' by Sleepless
+14:24:23 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/OK7i2k6AZP8?feature=shared
+14:24:38 | __main__        | WARNING  | ⏰ YouTube extraction timeout for https://youtu.be/OK7i2k6AZP8?feature=shared
+14:24:45 | __main__        | INFO     | 📊 Health Check: 6 guilds, 142 users, 0 playing
+14:25:20 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/OK7i2k6AZP8?feature=shared' by Sleepless
+14:25:20 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/OK7i2k6AZP8?feature=shared
+14:25:26 | __main__        | INFO     | ✅ Successfully extracted track: カラス (Karasu) - free MV (Sub Español, English, Romaji)
+14:25:26 | __main__        | INFO     | ✅ Added track to queue: カラス (Karasu) - free MV (Sub Español, English, Romaji)
+14:25:27 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+14:25:27 | __main__        | INFO     | 🎵 Now playing: カラス (Karasu) - free MV (Sub Español, English, Romaji)
+14:25:51 | discord.ext.commands.bot | ERROR    | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "help" is not found
+14:29:28 | __main__        | INFO     | 📭 Queue empty for guild 1252561974253064273
+14:29:45 | __main__        | INFO     | 📊 Health Check: 6 guilds, 142 users, 0 playing
+14:34:19 | __main__        | INFO     | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+14:34:19 | __main__        | INFO     | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+14:34:19 | __main__        | INFO     | 📦 Discord.py: 2.6.3
+14:34:19 | __main__        | INFO     | 🎵 Starting bot connection...
+14:34:20 | __main__        | INFO     | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+14:34:20 | __main__        | INFO     | ✅ Database initialized successfully with enhanced schema
+14:34:20 | __main__        | ERROR    | ❌ Failed to load config for guild 1252561974253064273: '128k' is not a valid AudioQuality
+14:34:20 | __main__        | INFO     | ✅ Loaded 0 server configurations
+14:34:20 | __main__        | INFO     | ✅ Synced 12 slash commands
+14:34:20 | __main__        | INFO     | ✅ Bot setup completed successfully in 1.69s
+14:34:24 | __main__        | INFO     | ============================================================
+14:34:24 | __main__        | INFO     | 🎵 Enhanced Music Bot v3.0 is ready!
+14:34:24 | __main__        | INFO     | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+14:34:24 | __main__        | INFO     | 🌐 Connected to 6 guilds
+14:34:24 | __main__        | INFO     | 👥 Serving 142 users
+14:34:24 | __main__        | INFO     | ============================================================
+14:34:48 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/JwHh3hmeACc?feature=shared' by Sleepless
+14:34:48 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/JwHh3hmeACc?feature=shared
+14:34:56 | __main__        | INFO     | ✅ Successfully extracted track: Gundam Build Fighters "Nibun no ichi" (Español Latino)
+14:34:56 | __main__        | INFO     | ✅ Added track to queue: Gundam Build Fighters "Nibun no ichi" (Español Latino)
+14:34:56 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+14:34:56 | __main__        | INFO     | 🎵 Now playing: Gundam Build Fighters "Nibun no ichi" (Español Latino)
+14:35:04 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/FUH9S44D1BM?feature=shared' by Sleepless
+14:35:04 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/FUH9S44D1BM?feature=shared
+14:35:12 | __main__        | INFO     | ✅ Successfully extracted track: FLOW - Colors
+14:35:12 | __main__        | INFO     | ✅ Added track to queue: FLOW - Colors
+14:36:59 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+14:36:59 | __main__        | INFO     | 🎵 Now playing: FLOW - Colors
+14:39:20 | __main__        | INFO     | 📊 Health Check: 6 guilds, 142 users, 1 playing
+14:40:51 | __main__        | INFO     | 📭 Queue empty for guild 1252561974253064273
+15:10:32 | __main__        | INFO     | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+15:10:32 | __main__        | INFO     | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+15:10:32 | __main__        | INFO     | 📦 Discord.py: 2.6.3
+15:10:32 | __main__        | INFO     | 🎵 Starting bot connection...
+15:10:33 | __main__        | INFO     | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+15:10:33 | __main__        | INFO     | ✅ Database initialized successfully with enhanced schema
+15:10:33 | __main__        | ERROR    | ❌ Failed to load config for guild 1252561974253064273: '128k' is not a valid AudioQuality
+15:10:33 | __main__        | INFO     | ✅ Loaded 0 server configurations
+15:10:34 | __main__        | INFO     | ✅ Synced 12 slash commands
+15:10:34 | __main__        | INFO     | ✅ Bot setup completed successfully in 1.72s
+15:10:38 | __main__        | INFO     | ============================================================
+15:10:38 | __main__        | INFO     | 🎵 Enhanced Music Bot v3.0 is ready!
+15:10:38 | __main__        | INFO     | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+15:10:38 | __main__        | INFO     | 🌐 Connected to 6 guilds
+15:10:38 | __main__        | INFO     | 👥 Serving 142 users
+15:10:38 | __main__        | INFO     | ============================================================
+15:10:53 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/I1YwnCtCp3Q?feature=shared' by Sleepless
+15:10:53 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/I1YwnCtCp3Q?feature=shared
+15:11:03 | __main__        | INFO     | ✅ Successfully extracted track: Faye Peraya - เติมคำว่า"รัก"ลงในช่องว่าง (OFFICIAL MV)
+15:11:03 | __main__        | INFO     | ✅ Added track to queue: Faye Peraya - เติมคำว่า"รัก"ลงในช่องว่าง (OFFICIAL MV)
+15:11:04 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+15:11:04 | __main__        | INFO     | 🎵 Now playing: Faye Peraya - เติมคำว่า"รัก"ลงในช่องว่าง (OFFICIAL MV)
+15:12:03 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/3YfFLTbFDzk?feature=shared' by Sleepless
+15:12:03 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/3YfFLTbFDzk?feature=shared
+15:12:10 | __main__        | INFO     | ✅ Successfully extracted track: AAA - Still Love You [Stage Mix]
+15:12:10 | __main__        | INFO     | ✅ Added track to queue: AAA - Still Love You [Stage Mix]
+15:12:23 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/c6rKeKsTfjU?feature=shared' by Sleepless
+15:12:23 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/c6rKeKsTfjU?feature=shared
+15:12:29 | __main__        | INFO     | ✅ Successfully extracted track: AAA - I'll be there [Stage Mix]
+15:12:29 | __main__        | INFO     | ✅ Added track to queue: AAA - I'll be there [Stage Mix]
+15:14:47 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+15:14:47 | __main__        | INFO     | 🎵 Now playing: AAA - Still Love You [Stage Mix]
+15:15:33 | __main__        | INFO     | 📊 Health Check: 6 guilds, 142 users, 1 playing
+15:17:50 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/ulr0muQKjk0?feature=shared' by Sleepless
+15:17:50 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/ulr0muQKjk0?feature=shared
+15:17:56 | __main__        | INFO     | ✅ Successfully extracted track: TAEYEON 태연 '11:11' MV
+15:17:56 | __main__        | INFO     | ✅ Added track to queue: TAEYEON 태연 '11:11' MV
+15:18:07 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/4Jq7BQvfBuw?feature=shared' by Sleepless
+15:18:07 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/4Jq7BQvfBuw?feature=shared
+15:18:13 | __main__        | INFO     | ✅ Successfully extracted track: TAEYEON - I (  's... Taeyeon Concert in Seoul ) Full HD 1080P
+15:18:13 | __main__        | INFO     | ✅ Added track to queue: TAEYEON - I (  's... Taeyeon Concert in Seoul ) Full HD 1080P
+15:19:46 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+15:19:46 | __main__        | INFO     | 🎵 Now playing: AAA - I'll be there [Stage Mix]
+15:20:33 | __main__        | INFO     | 📊 Health Check: 6 guilds, 142 users, 1 playing
+15:23:28 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+15:23:28 | __main__        | INFO     | 🎵 Now playing: TAEYEON 태연 '11:11' MV
+15:25:33 | __main__        | INFO     | 📊 Health Check: 6 guilds, 142 users, 1 playing
+15:27:25 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+15:27:25 | __main__        | INFO     | 🎵 Now playing: TAEYEON - I (  's... Taeyeon Concert in Seoul ) Full HD 1080P
+15:30:33 | __main__        | INFO     | 📊 Health Check: 6 guilds, 142 users, 1 playing
+15:30:34 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/gdSsAoYOeLw?feature=shared' by Sleepless
+15:30:34 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/gdSsAoYOeLw?feature=shared
+15:30:41 | __main__        | INFO     | ✅ Successfully extracted track: [OFFICIAL MV] Yoko Apasra - Be My Boo (Blank the Series OST)
+15:30:41 | __main__        | INFO     | ✅ Added track to queue: [OFFICIAL MV] Yoko Apasra - Be My Boo (Blank the Series OST)
+15:33:33 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+15:33:33 | __main__        | INFO     | 🎵 Now playing: [OFFICIAL MV] Yoko Apasra - Be My Boo (Blank the Series OST)
+15:35:29 | discord.voice_state | ERROR    | Disconnected from voice... Reconnecting in 1.97s.
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client_ws.py", line 336, in receive
+    msg = await self._reader.read()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "aiohttp/_websocket/reader_c.py", line 118, in read
+  File "aiohttp/_websocket/reader_c.py", line 115, in aiohttp._websocket.reader_c.WebSocketDataQueue.read
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\voice_state.py", line 601, in _poll_voice_ws
+    await self.ws.poll_event()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 1045, in poll_event
+    msg = await asyncio.wait_for(self.ws.receive(), timeout=30.0)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 506, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\timeouts.py", line 116, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+15:35:33 | __main__        | INFO     | 📊 Health Check: 6 guilds, 142 users, 1 playing
+15:36:13 | discord.gateway | WARNING  | Can't keep up, shard ID None websocket is 11.7s behind.
+15:39:56 | __main__        | INFO     | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+15:39:56 | __main__        | INFO     | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+15:39:56 | __main__        | INFO     | 📦 Discord.py: 2.6.3
+15:39:56 | __main__        | INFO     | 🎵 Starting bot connection...
+15:39:57 | __main__        | INFO     | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+15:39:57 | __main__        | INFO     | ✅ Database initialized successfully with enhanced schema
+15:39:57 | __main__        | ERROR    | ❌ Failed to load config for guild 1252561974253064273: '128k' is not a valid AudioQuality
+15:39:57 | __main__        | INFO     | ✅ Loaded 0 server configurations
+15:39:58 | __main__        | INFO     | ✅ Synced 12 slash commands
+15:39:58 | __main__        | INFO     | ✅ Bot setup completed successfully in 1.69s
+15:40:02 | __main__        | INFO     | ============================================================
+15:40:02 | __main__        | INFO     | 🎵 Enhanced Music Bot v3.0 is ready!
+15:40:02 | __main__        | INFO     | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+15:40:02 | __main__        | INFO     | 🌐 Connected to 6 guilds
+15:40:02 | __main__        | INFO     | 👥 Serving 142 users
+15:40:02 | __main__        | INFO     | ============================================================
+15:40:20 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/gdSsAoYOeLw?feature=shared' by Sleepless
+15:40:20 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/gdSsAoYOeLw?feature=shared
+15:40:29 | __main__        | INFO     | ✅ Successfully extracted track: [OFFICIAL MV] Yoko Apasra - Be My Boo (Blank the Series OST)
+15:40:29 | __main__        | INFO     | ✅ Added track to queue: [OFFICIAL MV] Yoko Apasra - Be My Boo (Blank the Series OST)
+15:40:29 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+15:40:29 | __main__        | INFO     | 🎵 Now playing: [OFFICIAL MV] Yoko Apasra - Be My Boo (Blank the Series OST)
+15:44:14 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/I1YwnCtCp3Q?feature=shared' by Sleepless
+15:44:14 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/I1YwnCtCp3Q?feature=shared
+15:44:19 | __main__        | INFO     | 📭 Queue empty for guild 1252561974253064273
+15:44:20 | __main__        | INFO     | ✅ Successfully extracted track: Faye Peraya - เติมคำว่า"รัก"ลงในช่องว่าง (OFFICIAL MV)
+15:44:20 | __main__        | INFO     | ✅ Added track to queue: Faye Peraya - เติมคำว่า"รัก"ลงในช่องว่าง (OFFICIAL MV)
+15:44:20 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+15:44:20 | __main__        | INFO     | 🎵 Now playing: Faye Peraya - เติมคำว่า"รัก"ลงในช่องว่าง (OFFICIAL MV)
+15:44:57 | __main__        | INFO     | 📊 Health Check: 6 guilds, 142 users, 1 playing
+15:48:02 | __main__        | INFO     | 📭 Queue empty for guild 1252561974253064273
+15:48:44 | __main__        | INFO     | 🎵 Play request: 'https://youtu.be/blMPzFHfb60?feature=shared' by Sleepless
+15:48:44 | __main__        | INFO     | 🔗 Processing YouTube URL: https://youtu.be/blMPzFHfb60?feature=shared
+15:48:50 | __main__        | INFO     | ✅ Successfully extracted track: Live Session : Blank The Series's OST. เติมคำว่ารักลงในช่องว่าง
+15:48:50 | __main__        | INFO     | ✅ Added track to queue: Live Session : Blank The Series's OST. เติมคำว่ารักลงในช่องว่าง
+15:48:51 | __main__        | INFO     | 🎵 Starting playback for guild 1252561974253064273
+15:48:51 | __main__        | INFO     | 🎵 Now playing: Live Session : Blank The Series's OST. เติมคำว่ารักลงในช่องว่าง
+15:49:57 | __main__        | INFO     | 📊 Health Check: 6 guilds, 142 users, 1 playing
+15:52:51 | __main__        | INFO     | 📭 Queue empty for guild 1252561974253064273

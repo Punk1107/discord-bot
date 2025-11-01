@@ -1,0 +1,22 @@
+2025-09-29 08:53:00 | __main__                  | INFO     | setup_hook          :1258 | ======================================================================
+2025-09-29 08:53:00 | __main__                  | INFO     | setup_hook          :1259 | 🚀 Starting Ultimate Music Bot v3.0...
+2025-09-29 08:53:00 | __main__                  | INFO     | setup_hook          :1260 | ======================================================================
+2025-09-29 08:53:00 | __main__                  | ERROR    | setup_hook          :1286 | ❌ Ultimate bot setup failed: no such column: liked
+2025-09-29 08:53:22 | __main__                  | INFO     | setup_hook          :1258 | ======================================================================
+2025-09-29 08:53:22 | __main__                  | INFO     | setup_hook          :1259 | 🚀 Starting Ultimate Music Bot v3.0...
+2025-09-29 08:53:22 | __main__                  | INFO     | setup_hook          :1260 | ======================================================================
+2025-09-29 08:53:22 | __main__                  | INFO     | initialize          :567  | ✅ Ultimate database initialized with comprehensive schema
+2025-09-29 08:53:22 | __main__                  | INFO     | load_server_configs :1307 | ✅ Loaded 0 server configurations
+2025-09-29 08:53:22 | __main__                  | ERROR    | stats_updater       :1464 | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-29 08:53:22 | __main__                  | INFO     | setup_hook          :1277 | ✅ Synced 1 slash commands
+2025-09-29 08:53:22 | __main__                  | INFO     | setup_hook          :1282 | ✅ Ultimate bot setup completed in 0.64s
+2025-09-29 08:53:22 | __main__                  | INFO     | setup_hook          :1283 | ======================================================================
+2025-09-29 08:54:39 | __main__                  | INFO     | setup_hook          :1258 | ======================================================================
+2025-09-29 08:54:39 | __main__                  | INFO     | setup_hook          :1259 | 🚀 Starting Ultimate Music Bot v3.0...
+2025-09-29 08:54:39 | __main__                  | INFO     | setup_hook          :1260 | ======================================================================
+2025-09-29 08:54:39 | __main__                  | INFO     | initialize          :567  | ✅ Ultimate database initialized with comprehensive schema
+2025-09-29 08:54:39 | __main__                  | INFO     | load_server_configs :1307 | ✅ Loaded 0 server configurations
+2025-09-29 08:54:39 | __main__                  | ERROR    | stats_updater       :1464 | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-29 08:54:39 | __main__                  | INFO     | setup_hook          :1277 | ✅ Synced 1 slash commands
+2025-09-29 08:54:39 | __main__                  | INFO     | setup_hook          :1282 | ✅ Ultimate bot setup completed in 0.71s
+2025-09-29 08:54:39 | __main__                  | INFO     | setup_hook          :1283 | ======================================================================

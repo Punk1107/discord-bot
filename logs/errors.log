@@ -1,0 +1,911 @@
+2025-09-28 17:42:11 | __main__             | ERROR    | ❌ Bot setup failed: no such column: user_id
+2025-09-28 17:42:11 | __main__             | ERROR    | ❌ Bot startup failed: no such column: user_id
+2025-09-28 17:45:27 | __main__             | ERROR    | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-28 17:47:50 | __main__             | ERROR    | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-28 17:48:45 | __main__             | ERROR    | Play command error: 404 Not Found (error code: 10062): Unknown interaction
+2025-09-28 17:48:45 | __main__             | ERROR    | Join command error: 404 Not Found (error code: 10062): Unknown interaction
+2025-09-28 17:48:45 | discord.app_commands.tree | ERROR    | Ignoring exception in command 'join'
+Traceback (most recent call last):
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1725, in join_command
+    await interaction.response.send_message(f"✅ **Joined** {channel.name}")
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1735, in join_command
+    await interaction.response.send_message(f"❌ Failed to join: {str(e)[:100]}", ephemeral=True)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'join' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2025-09-28 17:49:38 | __main__             | ERROR    | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-28 17:52:32 | __main__             | ERROR    | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-28 17:54:28 | __main__             | ERROR    | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-28 17:58:13 | __main__             | ERROR    | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-28 18:00:33 | __main__             | ERROR    | Failed to save server config: Object of type PlaybackQuality is not JSON serializable
+2025-09-28 18:00:34 | __main__             | ERROR    | Play command error: 404 Not Found (error code: 10008): Unknown Message
+2025-09-29 08:25:32 | __main__             | ERROR    | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-29 08:53:00 | [31m__main__[0m         | [31mERROR[0m | setup_hook          :1286 | ❌ Ultimate bot setup failed: no such column: liked
+2025-09-29 08:53:22 | [31m__main__[0m         | [31mERROR[0m | stats_updater       :1464 | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-29 08:54:39 | [31m__main__[0m         | [31mERROR[0m | stats_updater       :1464 | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-29 09:01:20 | __main__             | ERROR    | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-29 09:02:29 | __main__             | ERROR    | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-29 16:41:30 | __main__             | ERROR    | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-29 16:42:05 | __main__             | ERROR    | Join command error: PyNaCl library needed in order to use voice
+2025-09-29 16:42:11 | discord.app_commands.tree | ERROR    | Ignoring exception in command 'join'
+Traceback (most recent call last):
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1788, in join_command
+    await channel.connect()
+  File "C:\Users\Asus\Documents\Human system corporation\Music Bot Discord\.venv\Lib\site-packages\discord\abc.py", line 2141, in connect
+    voice: T = cls(client, self)
+               ~~~^^^^^^^^^^^^^^
+  File "C:\Users\Asus\Documents\Human system corporation\Music Bot Discord\.venv\Lib\site-packages\discord\voice_client.py", line 220, in __init__
+    raise RuntimeError('PyNaCl library needed in order to use voice')
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\Documents\Human system corporation\Music Bot Discord\.venv\Lib\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1799, in join_command
+    await interaction.response.send_message(f"❌ Failed to join: {str(e)[:100]}", ephemeral=True)
+  File "C:\Users\Asus\Documents\Human system corporation\Music Bot Discord\.venv\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\Documents\Human system corporation\Music Bot Discord\.venv\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\Documents\Human system corporation\Music Bot Discord\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\Documents\Human system corporation\Music Bot Discord\.venv\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\Documents\Human system corporation\Music Bot Discord\.venv\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'join' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2025-09-29 16:42:38 | __main__             | ERROR    | Stats updater error: 'NoneType' object has no attribute 'change_presence'
+2025-09-29 16:43:06 | __main__             | ERROR    | Failed to save server config: Object of type PlaybackQuality is not JSON serializable
+2025-09-29 16:56:06 | discord.voice_state  | ERROR    | Disconnected from voice... Reconnecting in 0.37s.
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client_ws.py", line 336, in receive
+    msg = await self._reader.read()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "aiohttp/_websocket/reader_c.py", line 118, in read
+  File "aiohttp/_websocket/reader_c.py", line 115, in aiohttp._websocket.reader_c.WebSocketDataQueue.read
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\voice_state.py", line 601, in _poll_voice_ws
+    await self.ws.poll_event()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 1045, in poll_event
+    msg = await asyncio.wait_for(self.ws.receive(), timeout=30.0)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 506, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\timeouts.py", line 116, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2025-09-29 16:57:05 | discord.app_commands.tree | ERROR    | Ignoring exception in command 'play'
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1843, in play_command
+    await interaction.response.defer()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\interactions.py", line 858, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'play' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2025-09-29 17:00:10 | discord.voice_state  | ERROR    | Disconnected from voice... Reconnecting in 1.17s.
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\voice_state.py", line 601, in _poll_voice_ws
+    await self.ws.poll_event()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1006
+2025-09-29 17:00:18 | discord.app_commands.tree | ERROR    | Ignoring exception in command 'play'
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1843, in play_command
+    await interaction.response.defer()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\interactions.py", line 858, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'play' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2025-09-29 17:01:41 | __main__             | ERROR    | Error in play_next: Not connected to voice.
+2025-09-29 17:03:42 | __main__             | ERROR    | Error in play_next: Not connected to voice.
+2025-10-01 18:16:36 | [94m__main__       [0m | [31mERROR   [0m | Database initialization failed: threads can only be started once
+2025-10-01 18:16:36 | [94m__main__       [0m | [31mERROR   [0m | Bot setup failed: threads can only be started once
+2025-10-01 18:16:36 | [94m__main__       [0m | [31mERROR   [0m | Bot startup failed: threads can only be started once
+2025-10-01 18:18:19 | [94m__main__       [0m | [31mERROR   [0m | Database initialization failed: threads can only be started once
+2025-10-01 18:18:19 | [94m__main__       [0m | [31mERROR   [0m | Bot setup failed: threads can only be started once
+2025-10-01 18:18:19 | [94m__main__       [0m | [31mERROR   [0m | Bot startup failed: threads can only be started once
+2025-10-01 18:20:10 | [94m__main__       [0m | [31mERROR   [0m | Failed to load server configs: threads can only be started once
+2025-10-01 18:20:11 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-01 18:21:29 | [94m__main__       [0m | [31mERROR   [0m | Failed to save server config: threads can only be started once
+2025-10-01 18:21:29 | [94m__main__       [0m | [31mERROR   [0m | Failed to add track to queue: threads can only be started once
+2025-10-01 18:21:38 | [94m__main__       [0m | [31mERROR   [0m | Failed to add to history: threads can only be started once
+2025-10-01 18:21:55 | [94m__main__       [0m | [31mERROR   [0m | Failed to add track to queue: threads can only be started once
+2025-10-01 18:22:10 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-01 18:24:10 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-01 18:25:11 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: threads can only be started once
+2025-10-01 18:25:23 | [94m__main__       [0m | [31mERROR   [0m | Failed to add to history: threads can only be started once
+2025-10-01 18:26:10 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-01 18:28:11 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-01 18:30:11 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-01 18:30:11 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: threads can only be started once
+2025-10-02 12:22:09 | discord.player  | [31mERROR[0m | Calling the after function failed.
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\player.py", line 789, in _call_after
+    self.after(error)
+    ~~~~~~~~~~^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1160, in after_playing
+    asyncio.create_task(player.add_to_history(track, not bool(error)))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 407, in create_task
+    loop = events.get_running_loop()
+RuntimeError: no running event loop
+2025-10-02 12:27:20 | discord.player  | [31mERROR[0m | Calling the after function failed.
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\player.py", line 789, in _call_after
+    self.after(error)
+    ~~~~~~~~~~^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1160, in after_playing
+    asyncio.create_task(player.add_to_history(track, not bool(error)))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 407, in create_task
+    loop = events.get_running_loop()
+RuntimeError: no running event loop
+2025-10-02 12:38:27 | [94m__main__       [0m | [31mERROR   [0m | Failed to load server configs: threads can only be started once
+2025-10-02 12:38:27 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-02 12:39:10 | [94m__main__       [0m | [31mERROR   [0m | Failed to save server config: threads can only be started once
+2025-10-02 12:39:10 | [94m__main__       [0m | [31mERROR   [0m | Failed to add track to queue: threads can only be started once
+2025-10-02 12:39:10 | [94m__main__       [0m | [31mERROR   [0m | Failed to add to history: threads can only be started once
+2025-10-02 12:40:07 | [94m__main__       [0m | [31mERROR   [0m | Failed to add track to queue: threads can only be started once
+2025-10-02 12:40:27 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-02 12:42:27 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-02 12:42:53 | [94m__main__       [0m | [31mERROR   [0m | Failed to add to history: threads can only be started once
+2025-10-02 12:43:27 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: threads can only be started once
+2025-10-02 12:44:27 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-02 12:46:27 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-02 12:46:51 | [94m__main__       [0m | [31mERROR   [0m | Failed to add track to queue: threads can only be started once
+2025-10-02 12:46:59 | [94m__main__       [0m | [31mERROR   [0m | Failed to add to history: threads can only be started once
+2025-10-02 12:48:27 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-02 12:48:27 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: threads can only be started once
+2025-10-02 12:50:27 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-02 12:52:27 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-02 12:53:27 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: threads can only be started once
+2025-10-03 16:19:44 | [94m__main__       [0m | [31mERROR   [0m | Failed to load server configs: threads can only be started once
+2025-10-03 16:19:45 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-03 16:20:24 | [94m__main__       [0m | [31mERROR   [0m | Failed to save server config: threads can only be started once
+2025-10-03 16:20:24 | [94m__main__       [0m | [31mERROR   [0m | Failed to add track to queue: threads can only be started once
+2025-10-03 16:20:25 | [94m__main__       [0m | [31mERROR   [0m | Failed to add to history: threads can only be started once
+2025-10-03 16:21:49 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-03 16:23:45 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-03 16:23:55 | [94m__main__       [0m | [31mERROR   [0m | Failed to add track to queue: threads can only be started once
+2025-10-03 16:24:07 | [94m__main__       [0m | [31mERROR   [0m | Failed to add to history: threads can only be started once
+2025-10-03 16:24:45 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: threads can only be started once
+2025-10-03 16:25:44 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-03 16:27:44 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: threads can only be started once
+2025-10-04 09:19:31 | [94m__main__       [0m | [31mERROR   [0m | Failed to save server config: Object of type AudioQuality is not JSON serializable
+2025-10-04 09:22:34 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 09:27:34 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 09:32:34 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 09:37:34 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 09:42:34 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 09:45:31 | [94m__main__       [0m | [31mERROR   [0m | Error in play_next: Not connected to voice.
+2025-10-04 20:08:42 | [94m__main__       [0m | [31mERROR   [0m | Failed to save server config: Object of type AudioQuality is not JSON serializable
+2025-10-04 20:12:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 20:17:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 20:22:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 20:27:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 20:32:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 20:37:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 20:42:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 20:47:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 20:52:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 20:57:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 21:02:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 21:07:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 21:12:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 21:17:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 21:22:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 21:27:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 21:32:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 21:37:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 21:42:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 21:47:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 21:52:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 21:57:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 22:02:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 22:07:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 22:12:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 22:17:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 22:22:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-04 22:27:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 09:06:50 | [94m__main__       [0m | [31mERROR   [0m | Failed to save server config: Object of type AudioQuality is not JSON serializable
+2025-10-05 09:11:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 09:16:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 09:21:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 09:26:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 09:31:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 09:36:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 09:41:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 09:46:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 09:51:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 09:56:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 10:01:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 10:06:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 10:11:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 10:16:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 10:21:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 10:26:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 10:31:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 10:36:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 10:41:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 10:46:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 10:51:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 10:56:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 11:01:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 11:06:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 11:11:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 11:16:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 22:40:16 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 22:40:18 | [94m__main__       [0m | [31mERROR   [0m | Failed to save server config: Object of type AudioQuality is not JSON serializable
+2025-10-05 22:45:15 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 22:50:15 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 22:55:15 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 23:00:15 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 23:05:15 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 23:10:15 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 23:15:15 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 23:20:15 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-05 23:25:15 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-07 08:46:26 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-07 08:51:26 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-07 08:56:26 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: NOT NULL constraint failed: performance_metrics.guild_id
+2025-10-08 10:10:57 | [94m__main__       [0m | [31mERROR   [0m | Bot setup failed: 'EnhancedMusicBot' object has no attribute 'cleanup_task'
+2025-10-08 10:10:57 | [94m__main__       [0m | [31mERROR   [0m | Bot startup failed: 'EnhancedMusicBot' object has no attribute 'cleanup_task'
+2025-10-08 10:10:57 | [94m__main__       [0m | [31mERROR   [0m | Error during cleanup: 'Loop' object has no attribute 'running'
+2025-10-08 10:13:27 | [94m__main__       [0m | [31mERROR   [0m | Bot setup failed: 'EnhancedMusicBot' object has no attribute 'cleanup_task'
+2025-10-08 10:13:27 | [94m__main__       [0m | [31mERROR   [0m | Bot startup failed: 'EnhancedMusicBot' object has no attribute 'cleanup_task'
+2025-10-08 10:13:27 | [94m__main__       [0m | [31mERROR   [0m | Error during cleanup: 'Loop' object has no attribute 'running'
+2025-10-10 17:26:19 | [94mdiscord.app_commands.tree[0m | [31mERROR   [0m | Ignoring exception in command 'join'
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1751, in join_command
+    await interaction.response.defer()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\interactions.py", line 858, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'join' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2025-10-10 17:28:21 | [94mdiscord.app_commands.tree[0m | [31mERROR   [0m | Ignoring exception in command 'play'
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1803, in play_command
+    await interaction.response.defer()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\interactions.py", line 858, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'play' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2025-10-10 17:35:33 | [94m__main__       [0m | [31mERROR   [0m | Error in play_next: argument of type 'NoneType' is not iterable
+2025-10-10 18:18:33 | [94mdiscord.app_commands.tree[0m | [31mERROR   [0m | Ignoring exception in command 'join'
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 2062, in join_command
+    await interaction.response.defer()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\interactions.py", line 858, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'join' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2025-10-11 09:18:46 | [94mdiscord.app_commands.tree[0m | [31mERROR   [0m | Ignoring exception in command 'play'
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1713, in play_command
+    await interaction.response.defer()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\interactions.py", line 858, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'play' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2025-10-11 10:38:06 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: Cannot write to closing transport
+2025-10-11 10:38:06 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Disconnected from voice... Reconnecting in 0.75s.
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client_ws.py", line 336, in receive
+    msg = await self._reader.read()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "aiohttp/_websocket/reader_c.py", line 118, in read
+  File "aiohttp/_websocket/reader_c.py", line 115, in aiohttp._websocket.reader_c.WebSocketDataQueue.read
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\voice_state.py", line 601, in _poll_voice_ws
+    await self.ws.poll_event()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 1045, in poll_event
+    msg = await asyncio.wait_for(self.ws.receive(), timeout=30.0)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 506, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\timeouts.py", line 116, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2025-10-11 10:38:06 | [94mdiscord.client [0m | [31mERROR   [0m | Attempting a reconnect in 0.32s
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1532, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1148, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1179, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Program Files\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11004] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\client.py", line 724, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 383, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\http.py", line 566, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 1067, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 770, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 725, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 642, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1209, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1538, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-10-11 10:38:06 | [94mdiscord.client [0m | [31mERROR   [0m | Attempting a reconnect in 0.95s
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1532, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1148, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1179, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Program Files\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11004] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\client.py", line 724, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 383, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\http.py", line 566, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 1067, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 770, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 725, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 642, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1209, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1538, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-10-11 10:38:07 | [94mdiscord.client [0m | [31mERROR   [0m | Attempting a reconnect in 0.66s
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1532, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1148, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1179, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Program Files\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11004] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\client.py", line 724, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 383, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\http.py", line 566, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 1067, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 770, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 725, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 642, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1209, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1538, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-10-11 10:38:08 | [94mdiscord.client [0m | [31mERROR   [0m | Attempting a reconnect in 10.19s
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1532, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1148, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1179, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Program Files\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\client.py", line 724, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 383, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\http.py", line 566, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 1067, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 770, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 725, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 642, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1209, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1538, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-10-11 21:08:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 21:18:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 21:28:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 21:38:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 21:48:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 21:58:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 22:08:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 22:18:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 22:28:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 22:38:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 22:48:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 22:58:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 23:08:31 | [94m__main__       [0m | [31mERROR   [0m | Memory cleanup error: 'EnhancedMusicBot' object has no attribute 'rate_limit_tracker'
+2025-10-11 23:09:35 | [94m__main__       [0m | [31mERROR   [0m | Could not find voice channel for guild 1252561974253064273
+2025-10-12 20:22:47 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Disconnected from voice... Reconnecting in 1.06s.
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\voice_state.py", line 601, in _poll_voice_ws
+    await self.ws.poll_event()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1006
+2025-10-12 20:49:17 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Disconnected from voice... Reconnecting in 1.50s.
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\voice_state.py", line 601, in _poll_voice_ws
+    await self.ws.poll_event()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1006
+2025-10-12 20:49:48 | [94m__main__       [0m | [31mERROR   [0m | Failed to reconnect voice client for guild 1252561974253064273: 
+2025-10-16 23:21:55 | [94mdiscord.app_commands.tree[0m | [31mERROR   [0m | Ignoring exception in command 'leave'
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1955, in leave_command
+    await interaction.response.defer()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\interactions.py", line 858, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'leave' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2025-10-24 21:17:51 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: Cannot write to closing transport
+2025-10-24 21:17:52 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: Cannot write to closing transport
+2025-10-24 21:17:52 | [94mdiscord.client [0m | [31mERROR   [0m | Attempting a reconnect in 0.59s
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1532, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1148, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1179, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Program Files\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\client.py", line 724, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 383, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\http.py", line 566, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 1067, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 770, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 725, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 642, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1209, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1538, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-10-24 21:40:54 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Disconnected from voice... Reconnecting in 1.70s.
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\voice_state.py", line 601, in _poll_voice_ws
+    await self.ws.poll_event()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1006
+2025-10-29 22:56:54 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Disconnected from voice... Reconnecting in 2.00s.
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\voice_state.py", line 601, in _poll_voice_ws
+    await self.ws.poll_event()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1001
+2025-11-01 14:13:16 | [94m__main__       [0m | [31mERROR   [0m | Failed to reconnect voice client for guild 1252561974253064273: 
