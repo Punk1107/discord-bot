@@ -756,6 +756,103 @@ class YouTubeExtractor:
             logger.error(f"Playlist extraction failed: {e}")
             return []
 
+# ==================== URL Validation & Direct Audio Helpers ====================
+
+SAFE_AUDIO_EXTS = ('.mp3', '.aac', '.m4a', '.flac', '.wav', '.ogg', '.opus', '.webm', '.mka', '.m3u8')
+
+BANNED_PATTERNS = [
+    r'porn', r'xxx', r'nsfw', r'xnxx', r'xvideo', r'xvideos', r'pornhub', r'redtube', r'xhamster', r'youporn',
+    r'spankbang', r'nhentai', r'e-hentai', r'avgle', r'fakku', r'rule34', r'หนังโป๊', r'ผู้ใหญ่', r'18\+',
+    r'camgirl', r'onlyfans', r'chaturbate', r'myfreecams', r'bongacams', r'cam4',
+    r'adult', r'ero', r'hentai', r'jav',
+    r'casino', r'bet', r'1xbet', r'sbobet', r'ufabet', r'sportsbook', r'slot', r'gambl', r'lotto', r'หวย', r'พนัน',
+    r'bet365', r'betway', r'22bet', r'stake', r'w88', r'm88', r'dafabet', r'fun88',
+    r'123movies', r'fmovies', r'gomovies', r'putlocker', r'solarmovie', r'kissasian', r'9anime', r'aniwave', r'soap2day', r'bflix'
+]
+
+# Explicit banned domains (match by exact or subdomain)
+BANNED_DOMAINS = {
+    # Pornographic
+    'pornhub.com', 'xvideos.com', 'xnxx.com', 'redtube.com', 'youporn.com', 'xhamster.com', 'spankbang.com',
+    'nhentai.net', 'e-hentai.org', 'avgle.com', 'fakku.net', 'rule34.xxx', 'onlyfans.com',
+    'chaturbate.com', 'myfreecams.com', 'bongacams.com', 'cam4.com',
+    # Gambling
+    '1xbet.com', 'sbobet.com', 'ufabet.com', 'dafabet.com', 'fun88.com', 'm88.com', 'w88.com',
+    'bet365.com', 'betway.com', '22bet.com', 'stake.com',
+    # Piracy/illegal streaming
+    'fmovies.to', '123movies.to', 'gomovies.to', 'putlocker.is', 'solarmovie.to', 'kissanime.ru', 'kissasian.sh', '9anime.to', 'aniwave.to', 'soap2day.rs', 'bflix.gg'
+}
+
+# Block by top-level domain suffixes
+BANNED_TLDS = ('.xxx', '.porn', '.adult', '.sex', '.casino', '.bet')
+
+ALLOWED_PROVIDERS = [
+    'youtube.com', 'www.youtube.com', 'youtu.be', 'music.youtube.com', 'm.youtube.com',
+    'open.spotify.com', 'spotify.com'
+]
+
+def _domain_of(url: str) -> str:
+    try:
+        return urlparse(url).netloc.lower()
+    except Exception:
+        return ''
+
+def is_banned_url(url: str) -> bool:
+    u = url.lower()
+    d = _domain_of(u)
+    # Keyword/regex based
+    for p in BANNED_PATTERNS:
+        try:
+            if re.search(p, u):
+                return True
+        except re.error:
+            continue
+    if not d:
+        return False
+    # Domain and TLD based
+    for bd in BANNED_DOMAINS:
+        if d == bd or d.endswith('.' + bd):
+            return True
+    # Extra domains from environment (comma-separated)
+    extra_env = os.getenv('EXTRA_BANNED_DOMAINS')
+    if extra_env:
+        for s in extra_env.split(','):
+            s = s.strip().lower().lstrip('*.')
+            if s and (d == s or d.endswith('.' + s)):
+                return True
+    if any(d.endswith(tld) for tld in BANNED_TLDS):
+        return True
+    return False
+
+def is_allowed_provider(url: str) -> bool:
+    d = _domain_of(url)
+    return any(host in d for host in ALLOWED_PROVIDERS)
+
+def is_direct_audio_by_ext(url: str) -> bool:
+    try:
+        path = urlparse(url).path.lower()
+        return any(path.endswith(ext) for ext in SAFE_AUDIO_EXTS)
+    except Exception:
+        return False
+
+async def is_audio_content_type(url: str) -> bool:
+    try:
+        timeout = aiohttp.ClientTimeout(total=6)
+        async with aiohttp.ClientSession(timeout=timeout) as session:
+            async with session.head(url, allow_redirects=True) as resp:
+                ct = resp.headers.get('Content-Type', '')
+                return 'audio' in ct.lower() or 'mpegurl' in ct.lower() or 'mpeg' in ct.lower()
+    except Exception:
+        return False
+
+def filename_title(url: str) -> str:
+    try:
+        path = urlparse(url).path
+        name = os.path.basename(path)
+        return re.sub(r'[_-]+', ' ', os.path.splitext(name)[0]) or 'Direct Audio'
+    except Exception:
+        return 'Direct Audio'
+
 # ==================== Audio Effects Processor ====================
 
 class AudioEffectsProcessor:
