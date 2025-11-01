@@ -909,3 +909,5 @@ Traceback (most recent call last):
     raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
 discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1001
 2025-11-01 14:13:16 | [94m__main__       [0m | [31mERROR   [0m | Failed to reconnect voice client for guild 1252561974253064273: 
+2025-11-01 22:11:55 | [94m__main__       [0m | [31mERROR   [0m | Cleanup task error: No available database connections in pool
+2025-11-01 22:12:55 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: No available database connections in pool
