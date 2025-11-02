@@ -3157,6 +3157,10 @@ async def on_app_command_error(interaction: discord.Interaction, error: app_comm
             await interaction.response.send_message(error_message, ephemeral=True)
     except:
         pass
+    
+# ==================== Main Execution ====================
+# somewhere before bot.run()
+webserver.start_webserver()
 
 # ==================== Main Execution ====================
 
