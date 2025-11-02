@@ -3736,3 +3736,135 @@ discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1001
 2025-11-01 19:45:35 | [94m__main__       [0m | [32mINFO    [0m | Starting playback for guild 1252561974253064273
 2025-11-01 19:45:37 | [94m__main__       [0m | [32mINFO    [0m | Now playing: AAA-さよならの前に stage mix (AAA ARENA 2014 Gold Symphony & 2016  Dome FANTASTIC OVER & 2017 WAY OF GLORY)
 2025-11-01 19:51:05 | [94m__main__       [0m | [33mWARNING [0m | Voice client not connected for guild 1252561974253064273, attempting reconnection...
+2025-11-02 09:50:02 | [94m__main__       [0m | [32mINFO    [0m | ✅ Spotify integration enabled
+2025-11-02 09:50:02 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2025-11-02 09:50:02 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+2025-11-02 09:50:02 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2025-11-02 09:50:02 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Starting bot connection...
+2025-11-02 09:50:03 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2025-11-02 09:50:03 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+2025-11-02 09:50:03 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2025-11-02 09:50:03 | [94m__main__       [0m | [32mINFO    [0m | ✅ Database initialized successfully with enhanced schema
+2025-11-02 09:50:03 | [94m__main__       [0m | [32mINFO    [0m | ✅ Loaded 1 server configurations
+2025-11-02 09:50:04 | [94m__main__       [0m | [32mINFO    [0m | ✅ Synced 20 slash commands
+2025-11-02 09:50:04 | [94m__main__       [0m | [32mINFO    [0m | ✅ Bot setup completed successfully
+2025-11-02 09:50:07 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2025-11-02 09:50:07 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Enhanced Music Bot v3.0 is ready!
+2025-11-02 09:50:07 | [94m__main__       [0m | [32mINFO    [0m | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+2025-11-02 09:50:07 | [94m__main__       [0m | [32mINFO    [0m | 🌐 Connected to 6 guilds
+2025-11-02 09:50:07 | [94m__main__       [0m | [32mINFO    [0m | 👥 Serving 143 users
+2025-11-02 09:50:07 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2025-11-02 09:50:07 | [94m__main__       [0m | [32mINFO    [0m | 📊 Health Check: 6 guilds, 143 users, 0 playing
+2025-11-02 09:50:39 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/fJzK0dypUFg?si=-SMg6bLC2wez_Gp4' by Sleepless
+2025-11-02 09:50:39 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/fJzK0dypUFg?si=-SMg6bLC2wez_Gp4
+2025-11-02 09:50:41 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-02 09:50:41 | [94m__main__       [0m | [32mINFO    [0m | Starting playback for guild 1252561974253064273
+2025-11-02 09:50:42 | [94m__main__       [0m | [32mINFO    [0m | Now playing: "เสน่หา"  - KT Long Flowing  [Cover by Faye Malisorn]
+2025-11-02 09:51:05 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/Xf0LgsZe7MU?si=nOCY6m25wiO3yfGa' by Sleepless
+2025-11-02 09:51:05 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/Xf0LgsZe7MU?si=nOCY6m25wiO3yfGa
+2025-11-02 09:51:06 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-02 09:51:30 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/gdSsAoYOeLw?si=f-H-N_uzxGDFt6hj' by Sleepless
+2025-11-02 09:51:30 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/gdSsAoYOeLw?si=f-H-N_uzxGDFt6hj
+2025-11-02 09:51:32 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-02 09:51:45 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/blMPzFHfb60?si=5sO3RnmNv7rQYbio' by Sleepless
+2025-11-02 09:51:45 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/blMPzFHfb60?si=5sO3RnmNv7rQYbio
+2025-11-02 09:51:46 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-02 09:52:03 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/1TqI0cadiyU?si=fJgty5V304Mu-0YX' by Sleepless
+2025-11-02 09:52:03 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/1TqI0cadiyU?si=fJgty5V304Mu-0YX
+2025-11-02 09:52:05 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-02 09:52:42 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/FouHaSb5deE?si=Q3HKcNxVYZa7vL02' by Sleepless
+2025-11-02 09:52:42 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/FouHaSb5deE?si=Q3HKcNxVYZa7vL02
+2025-11-02 09:52:43 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-02 09:54:21 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ความรู้สึกเราไม่เท่ากัน (uneven) - FAYE PERAYA x marr team  | “เพลง marr” EP27
+2025-11-02 09:57:37 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://spankbang.com/most_popular/2/' by Sleepless
+2025-11-02 09:57:37 | [94m__main__       [0m | [32mINFO    [0m | 🔍 Searching YouTube for: https://spankbang.com/most_popular/2/
+2025-11-02 09:57:53 | [94m__main__       [0m | [32mINFO    [0m | Now playing: [OFFICIAL MV] Yoko Apasra - Be My Boo (Blank the Series OST)
+2025-11-02 10:01:36 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Live Session : Blank The Series's OST. เติมคำว่ารักลงในช่องว่าง
+2025-11-02 10:05:30 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Faye Peraya ดวงใจ  Original by Palmy
+2025-11-02 10:09:03 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ชอบที่เธอเป็นเธอ - แทมมะริน Cover by #applelapisara x #fayesupaporn
+2025-11-02 10:11:04 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ชอบที่เธอเป็นเธอ - แทมมะริน Cover by #applelapisara x #fayesupaporn
+2025-11-02 10:12:32 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/dOIuqmMhedU?si=BOYP7BTuki1twBFu' by Sleepless
+2025-11-02 10:12:32 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/dOIuqmMhedU?si=BOYP7BTuki1twBFu
+2025-11-02 10:12:33 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-02 10:13:05 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ชอบที่เธอเป็นเธอ - แทมมะริน Cover by #applelapisara x #fayesupaporn
+2025-11-02 10:13:17 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ชอบที่เธอเป็นเธอ - แทมมะริน Cover by #applelapisara x #fayesupaporn
+2025-11-02 10:13:25 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ชอบที่เธอเป็นเธอ - แทมมะริน Cover by #applelapisara x #fayesupaporn
+2025-11-02 10:13:37 | [94m__main__       [0m | [33mWARNING [0m | Voice client not connected for guild 1252561974253064273, attempting reconnection...
+2025-11-02 10:13:57 | [94m__main__       [0m | [31mERROR   [0m | Failed to reconnect voice client for guild 1252561974253064273: 
+2025-11-02 10:24:56 | [94mdiscord.client [0m | [31mERROR   [0m | Attempting a reconnect in 1.58s
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1532, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1148, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1179, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Program Files\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\client.py", line 724, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 383, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\http.py", line 566, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 1067, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 770, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 725, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 642, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1209, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1538, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-11-02 10:25:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: Cannot write to closing transport
+2025-11-02 10:25:07 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2025-11-02 10:25:07 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Enhanced Music Bot v3.0 is ready!
+2025-11-02 10:25:07 | [94m__main__       [0m | [32mINFO    [0m | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+2025-11-02 10:25:07 | [94m__main__       [0m | [32mINFO    [0m | 🌐 Connected to 6 guilds
+2025-11-02 10:25:07 | [94m__main__       [0m | [32mINFO    [0m | 👥 Serving 143 users
+2025-11-02 10:25:07 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2025-11-02 10:25:07 | [94m__main__       [0m | [32mINFO    [0m | 📊 Health Check: 6 guilds, 143 users, 0 playing
