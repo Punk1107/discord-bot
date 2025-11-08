@@ -1,48 +1,44 @@
+# (Imports เดิมของคุณ... เช่น import discord)
 from flask import Flask, jsonify
 from threading import Thread
 import logging
+import os  # <--- เพิ่มอันนี้ด้วย
 import socket
 
-# --- Flask app setup ---
+# =================================================================
+# WEB SERVER (สำหรับหลอก Render ไม่ให้ Sleep)
+# =================================================================
+
 app = Flask(__name__)
 
-# Disable Flask’s default logger to avoid duplicate logs in multi-thread
+# ปิด Log ของ Flask เพื่อไม่ให้มันตีกับ Log ของบอท
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
 @app.route("/")
 def home():
-    return jsonify({"status": "Bot is running!"})
-
-
-def find_free_port(default_port=8080, max_tries=10):
-    """Try to find an available port starting from default_port."""
-    port = default_port
-    for _ in range(max_tries):
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            try:
-                s.bind(("0.0.0.0", port))
-                return port
-            except OSError:
-                port += 1
-    # fallback: default if all failed
-    return default_port
-
+    """ นี่คือหน้าเว็บที่ Render จะมาสแกน """
+    return jsonify({"status": "Bot is running!", "message": "This is a keep-alive endpoint."})
 
 def run_server():
-    """Run Flask app safely."""
+    """ รัน Flask app โดยใช้ Port ที่ Render กำหนดมาให้ """
     try:
-        port = find_free_port(8080)
-        app.run(host="0.0.0.0", port=port, debug=False, use_reloader=False, threaded=True)
+        # (สำคัญ!) Render จะส่ง Port มาให้เราทาง $PORT (ปกติคือ 10000)
+        port = int(os.environ.get("PORT", 10000))
+        app.run(host="0.0.0.0", port=port, debug=False, use_reloader=False)
+        print(f"[WebServer] Started successfully on port {port}")
     except Exception as e:
         print(f"[WebServer] Failed to start Flask: {e}")
 
-
 def start_webserver():
-    """Start the Flask webserver on a daemon thread."""
+    """ สั่งให้ Flask ทำงานใน thread แยก (daemon) """
     try:
         thread = Thread(target=run_server, name="FlaskWebServer", daemon=True)
         thread.start()
         print("[WebServer] Flask thread started successfully.")
     except Exception as e:
         print(f"[WebServer] Error starting Flask thread: {e}")
+
+# =================================================================
+# (จบส่วน Web Server)
+# =================================================================

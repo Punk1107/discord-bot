@@ -3161,10 +3161,6 @@ async def on_app_command_error(interaction: discord.Interaction, error: app_comm
         pass
     
 # ==================== Main Execution ====================
-# somewhere before bot.run()
-webserver.start_webserver()
-
-# ==================== Main Execution ====================
 
 async def main():
     """Main execution function with enhanced error handling"""
@@ -3189,18 +3185,12 @@ async def main():
         try:
             logger.info("Performing graceful shutdown...")
 
-            for task in bot.progress_tasks.values():
-                task.cancel()
+            if hasattr(bot, 'progress_tasks'):
+                for task in bot.progress_tasks.values():
+                    task.cancel()
 
-            if hasattr(bot, 'cleanup_task'):
-                bot.cleanup_task.cancel()
-            if hasattr(bot, 'idle_disconnect_task'):
-                bot.idle_disconnect_task.cancel()
-            if hasattr(bot, 'stats_updater'):
-                bot.stats_updater.cancel()
-            if hasattr(bot, 'memory_cleanup_task'):
-                bot.memory_cleanup_task.cancel()
-
+            # ... (โค้ด cleanup อื่นๆ ของคุณ) ...
+            
             for vc in bot.voice_clients:
                 try:
                     await vc.disconnect()
@@ -3213,9 +3203,18 @@ async def main():
         except Exception as e:
             logger.error(f"Error during cleanup: {e}")
 
+# ==================== (ส่วนล่างสุดของไฟล์) ====================
+
 if __name__ == "__main__":
     try:
+        print("[Main] Starting services...")
+        
+        # 1. สั่งให้เว็บเซิร์ฟเวอร์ (ที่หลอก Render) ทำงานก่อน
+        webserver.start_webserver()
+        
+        # 2. รันบอท Discord (asyncio)
         asyncio.run(main())
+        
     except KeyboardInterrupt:
         print("\n🛑 Bot shutdown by user")
     except Exception as e:
