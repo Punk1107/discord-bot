@@ -515,8 +515,20 @@ class SpotifyExtractor:
 
 # ==================== YouTube Extractor ====================
 
+import re
+import time
+import asyncio
+from typing import Optional, Dict, List
+from urllib.parse import urlparse
+import yt_dlp
+import logging
+
+logger = logging.getLogger(__name__)
+
+MAX_TRACK_LENGTH = 10800  # 3 ชั่วโมง, ปรับตามต้องการ
+
 class Track:
-    def __init__(self, title, url, duration=0, thumbnail=None, uploader="Unknown", view_count=None, upload_date=None):
+    def __init__(self, title, url, duration=0, thumbnail=None, uploader="Unknown", view_count=None, upload_date=None, requester_id=None):
         self.title = title
         self.url = url
         self.duration = duration
@@ -524,6 +536,7 @@ class Track:
         self.uploader = uploader
         self.view_count = view_count
         self.upload_date = upload_date
+        self.requester_id = requester_id  # สามารถเซ็ตได้
 
 class YouTubeExtractor:
     def __init__(self):
@@ -544,7 +557,7 @@ class YouTubeExtractor:
             "cookiefile": "cookies.txt",
             "extractor_args": {
                 "youtube": {
-                    "player_client": ["android"]  # ใช้ Android client เพื่อ bypass player block
+                    "player_client": ["android"]
                 }
             }
         }
@@ -562,7 +575,6 @@ class YouTubeExtractor:
     def _clean_url(self, url: str) -> str:
         try:
             if "youtube.com" in url or "youtu.be" in url:
-                # ตัด query string ที่ไม่จำเป็น
                 url = re.sub(r'[&?](list|index|start_radio|si)=[^&]*', '', url)
         except Exception:
             pass
@@ -572,7 +584,6 @@ class YouTubeExtractor:
         query = self._clean_url(query)
         cache_key = f"{query}_{extract_flat}"
 
-        # ตรวจ cache ก่อน
         if cache_key in self._cache:
             cached_data, cached_time = self._cache[cache_key]
             if time.time() - cached_time < self._cache_timeout:
@@ -597,15 +608,10 @@ class YouTubeExtractor:
                 if result and "url" in result:
                     logger.info(f"[YouTubeExtractor] Extracted playable URL: {result['url'][:120]}...")
 
-                # Cache
                 self._cache[cache_key] = (result, time.time())
 
-                # ล้าง cache เก่า
                 current_time = time.time()
-                self._cache = {
-                    k: v for k, v in self._cache.items()
-                    if current_time - v[1] < self._cache_timeout
-                }
+                self._cache = {k: v for k, v in self._cache.items() if current_time - v[1] < self._cache_timeout}
                 if len(self._cache) > self._max_cache_size:
                     sorted_cache = sorted(self._cache.items(), key=lambda x: x[1][1])
                     self._cache = dict(sorted_cache[-self._max_cache_size:])
@@ -624,81 +630,60 @@ class YouTubeExtractor:
         logger.error(f"YouTube extract failed after {retries} attempts: {last_error}")
         return None
 
-    async def search_youtube(self, query: str, max_results: int = 10) -> List:
+    async def get_track_from_url(self, url: str, requester_id: Optional[int] = None) -> Optional[Track]:
+        url = self._clean_url(url)
+        info = await self.extract_info(url)
+        if not info:
+            return None
+        entry = info["entries"][0] if "entries" in info and info["entries"] else info
+        if not entry:
+            return None
+        duration = entry.get("duration", 0)
+        if duration and duration > MAX_TRACK_LENGTH:
+            return None
+        return Track(
+            title=entry.get("title", "Unknown Title"),
+            url=entry.get("webpage_url", url),
+            duration=duration or 0,
+            thumbnail=entry.get("thumbnail"),
+            uploader=entry.get("uploader", "Unknown"),
+            view_count=entry.get("view_count"),
+            upload_date=entry.get("upload_date"),
+            requester_id=requester_id
+        )
+
+    async def search_youtube(self, query: str, max_results: int = 10) -> List[Track]:
         if not query or not query.strip():
             logger.error("Empty search query provided")
             return []
 
-        try:
-            search_query = f"ytsearch{max_results}:{query.strip()}"
-            info = await self.extract_info(search_query)
-
-            if not info or "entries" not in info:
-                return []
-
-            tracks = []
-            for entry in info["entries"]:
-                if not entry:
-                    continue
-                try:
-                    duration = entry.get("duration", 0)
-                    if duration and duration > MAX_TRACK_LENGTH:
-                        continue
-                    title = entry.get("title")
-                    url = entry.get("webpage_url") or entry.get("url")
-                    if not title or not url:
-                        continue
-                    tracks.append(
-                        Track(
-                            title=title,
-                            url=url,
-                            duration=duration or 0,
-                            thumbnail=entry.get("thumbnail"),
-                            uploader=entry.get("uploader", "Unknown"),
-                            view_count=entry.get("view_count"),
-                            upload_date=entry.get("upload_date"),
-                        )
-                    )
-                except Exception:
-                    continue
-            return tracks
-        except Exception as e:
-            logger.error(f"YouTube search failed: {e}")
+        search_query = f"ytsearch{max_results}:{query.strip()}"
+        info = await self.extract_info(search_query)
+        if not info or "entries" not in info:
             return []
 
-    async def get_track_from_url(self, url: str) -> Optional[Track]:
-        try:
-            url = self._clean_url(url)
-            info = await self.extract_info(url)
-            if not info:
-                return None
-            entry = info["entries"][0] if "entries" in info and info["entries"] else info
+        tracks = []
+        for entry in info["entries"]:
             if not entry:
-                return None
+                continue
             duration = entry.get("duration", 0)
             if duration and duration > MAX_TRACK_LENGTH:
-                return None
-            return Track(
-                title=entry.get("title", "Unknown Title"),
-                url=entry.get("webpage_url", url),
-                duration=duration or 0,
-                thumbnail=entry.get("thumbnail"),
-                uploader=entry.get("uploader", "Unknown"),
-                view_count=entry.get("view_count"),
-                upload_date=entry.get("upload_date"),
+                continue
+            tracks.append(
+                Track(
+                    title=entry.get("title"),
+                    url=entry.get("webpage_url") or entry.get("url"),
+                    duration=duration or 0,
+                    thumbnail=entry.get("thumbnail"),
+                    uploader=entry.get("uploader", "Unknown"),
+                    view_count=entry.get("view_count"),
+                    upload_date=entry.get("upload_date"),
+                )
             )
-        except Exception as e:
-            logger.error(f"Failed to extract track from URL {url}: {e}")
-            return None
+        return tracks
 
     def is_youtube_url(self, url: str) -> bool:
-        youtube_domains = [
-            "youtube.com",
-            "youtu.be",
-            "www.youtube.com",
-            "m.youtube.com",
-            "music.youtube.com",
-        ]
+        youtube_domains = ["youtube.com", "youtu.be", "www.youtube.com", "m.youtube.com", "music.youtube.com"]
         try:
             parsed = urlparse(url)
             return parsed.netloc.lower() in youtube_domains
@@ -708,64 +693,38 @@ class YouTubeExtractor:
     def is_playlist_url(self, url: str) -> bool:
         return "list=" in url and "youtube.com" in url
 
-    async def get_playlist_tracks(self, url: str, max_tracks: int = 50) -> List[Track]:
+    async def get_playlist_tracks(self, url: str, max_tracks: int = 50, requester_id: Optional[int] = None) -> List[Track]:
+        url = self._clean_url(url)
+        opts = self.ytdl_opts.copy()
+        opts["extract_flat"] = "in_playlist"
+        opts["noplaylist"] = False
+
+        def extract():
+            with yt_dlp.YoutubeDL(opts) as ydl:
+                return ydl.extract_info(url, download=False)
+
+        loop = asyncio.get_event_loop()
         try:
-            logger.info(f"Extracting YouTube playlist: {url}")
-            url = self._clean_url(url)
-            opts = self.ytdl_opts.copy()
-            opts["extract_flat"] = "in_playlist"
-            opts["noplaylist"] = False
-
-            def extract():
-                with yt_dlp.YoutubeDL(opts) as ydl:
-                    return ydl.extract_info(url, download=False)
-
-            loop = asyncio.get_event_loop()
-            result = await asyncio.wait_for(
-                loop.run_in_executor(None, extract),
-                timeout=30.0
-            )
-
-            if not result or "entries" not in result:
-                return []
-
-            tracks = []
-            entries = result["entries"][:max_tracks]
-            for entry in entries:
-                if not entry:
-                    continue
-                try:
-                    video_url = entry.get("url") or entry.get("webpage_url") or f"https://www.youtube.com/watch?v={entry.get('id')}"
-                    if not video_url:
-                        continue
-                    track_info = await self.extract_info(video_url)
-                    if not track_info:
-                        continue
-                    duration = track_info.get("duration", 0)
-                    if duration and duration > MAX_TRACK_LENGTH:
-                        continue
-                    tracks.append(
-                        Track(
-                            title=track_info.get("title", "Unknown Title"),
-                            url=track_info.get("webpage_url", video_url),
-                            duration=duration or 0,
-                            thumbnail=track_info.get("thumbnail"),
-                            uploader=track_info.get("uploader", "Unknown"),
-                            view_count=track_info.get("view_count"),
-                            upload_date=track_info.get("upload_date"),
-                        )
-                    )
-                except Exception as e:
-                    logger.warning(f"Failed to extract track: {e}")
-                    continue
-            logger.info(f"✅ Extracted {len(tracks)} tracks from playlist")
-            return tracks
+            result = await asyncio.wait_for(loop.run_in_executor(None, extract), timeout=30.0)
         except asyncio.TimeoutError:
             logger.error(f"Playlist extraction timeout: {url}")
             return []
-        except Exception as e:
-            logger.error(f"Playlist extraction failed: {e}")
+
+        if not result or "entries" not in result:
             return []
+
+        tracks = []
+        entries = result["entries"][:max_tracks]
+        for entry in entries:
+            if not entry:
+                continue
+            video_url = entry.get("url") or entry.get("webpage_url") or f"https://www.youtube.com/watch?v={entry.get('id')}"
+            track = await self.get_track_from_url(video_url, requester_id=requester_id)
+            if track:
+                tracks.append(track)
+        logger.info(f"✅ Extracted {len(tracks)} tracks from playlist")
+        return tracks
+
 # ================================= Constants =================================
 
 SAFE_AUDIO_EXTS = (
