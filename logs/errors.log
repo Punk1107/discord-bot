@@ -909,4 +909,74 @@ Traceback (most recent call last):
     raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
 discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1001
 2025-11-01 14:13:16 | [94m__main__       [0m | [31mERROR   [0m | Failed to reconnect voice client for guild 1252561974253064273: 
+2025-11-02 10:13:57 | [94m__main__       [0m | [31mERROR   [0m | Failed to reconnect voice client for guild 1252561974253064273: 
+2025-11-02 10:24:56 | [94mdiscord.client [0m | [31mERROR   [0m | Attempting a reconnect in 1.58s
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1532, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1148, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1179, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Program Files\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
 
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\client.py", line 724, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\gateway.py", line 383, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\http.py", line 566, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 1067, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 770, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\client.py", line 725, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 642, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1209, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\aiohttp\connector.py", line 1538, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-11-02 10:25:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: Cannot write to closing transport
