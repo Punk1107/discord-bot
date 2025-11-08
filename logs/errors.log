@@ -980,4 +980,3 @@ Traceback (most recent call last):
     raise ClientConnectorDNSError(req.connection_key, exc) from exc
 aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [getaddrinfo failed]
 2025-11-02 10:25:03 | [94m__main__       [0m | [31mERROR   [0m | Stats updater error: Cannot write to closing transport
-2025-11-02 10:54:54 | [94m__main__       [0m | [31mERROR   [0m | Failed to reconnect voice client for guild 1252561974253064273: 
