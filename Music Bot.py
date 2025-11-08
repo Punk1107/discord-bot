@@ -515,6 +515,16 @@ class SpotifyExtractor:
 
 # ==================== YouTube Extractor ====================
 
+class Track:
+    def __init__(self, title, url, duration=0, thumbnail=None, uploader="Unknown", view_count=None, upload_date=None):
+        self.title = title
+        self.url = url
+        self.duration = duration
+        self.thumbnail = thumbnail
+        self.uploader = uploader
+        self.view_count = view_count
+        self.upload_date = upload_date
+
 class YouTubeExtractor:
     def __init__(self):
         self.ytdl_opts = {
@@ -531,18 +541,12 @@ class YouTubeExtractor:
             "cachedir": False,
             "retries": 5,
             "socket_timeout": 20,
-            
-            # (ไฟล์คุกกี้ยังอยู่เหมือนเดิม ถูกต้องแล้ว)
-            "cookiefile": "cookies.txt"
-            
-            # --- 👇 นี่คือส่วนที่แก้ 👇 ---
-            #
-            # ผมลบ "extractor_args" ที่บังคับ "android" ทิ้งไปเลย
-            # เพราะ yt-dlp เวอร์ชันใหม่ (ที่เราบังคับอัปเดตบน Render)
-            # มันฉลาดพอที่จะเลือก Client ที่ดีที่สุดเองแล้ว
-            # การใส่ค่านี้ไว้ = บังคับให้มันใช้ Client ที่ "เก่า" และ "ถูกบล็อก"
-            #
-            # --- (จบส่วนที่แก้) ---
+            "cookiefile": "cookies.txt",
+            "extractor_args": {
+                "youtube": {
+                    "player_client": ["android"]  # ใช้ Android client เพื่อ bypass player block
+                }
+            }
         }
 
         self._ytdl = None
@@ -558,9 +562,8 @@ class YouTubeExtractor:
     def _clean_url(self, url: str) -> str:
         try:
             if "youtube.com" in url or "youtu.be" in url:
-                url = re.sub(r'[&?]list=[^&]*', '', url)
-                url = re.sub(r'[&?]index=[^&]*', '', url)
-                url = re.sub(r'[&?]start_radio=[^&]*', '', url)
+                # ตัด query string ที่ไม่จำเป็น
+                url = re.sub(r'[&?](list|index|start_radio|si)=[^&]*', '', url)
         except Exception:
             pass
         return url
@@ -591,9 +594,8 @@ class YouTubeExtractor:
                     timeout=25.0
                 )
 
-                # ✅ Debug log URL ที่ได้มา
                 if result and "url" in result:
-                    print(f"[YouTubeExtractor] Extracted playable URL: {result['url'][:120]}...")
+                    logger.info(f"[YouTubeExtractor] Extracted playable URL: {result['url'][:120]}...")
 
                 # Cache
                 self._cache[cache_key] = (result, time.time())
@@ -640,26 +642,23 @@ class YouTubeExtractor:
                     continue
                 try:
                     duration = entry.get("duration", 0)
-                    # if duration and duration > MAX_TRACK_LENGTH:
-                    #     continue
+                    if duration and duration > MAX_TRACK_LENGTH:
+                        continue
                     title = entry.get("title")
                     url = entry.get("webpage_url") or entry.get("url")
                     if not title or not url:
                         continue
-                    
-                    # (ต้องแน่ใจว่าคลาส Track นิยามไว้)
-                    # tracks.append(
-                    #     Track(
-                    #         title=title,
-                    #         url=url,
-                    #         duration=duration or 0,
-                    #         thumbnail=entry.get("thumbnail"),
-                    #         uploader=entry.get("uploader", "Unknown"),
-                    #         view_count=entry.get("view_count"),
-                    #         upload_date=entry.get("upload_date"),
-                    #     )
-                    # )
-                    pass # ลบ pass นี้ออกถ้าคุณเอา Track กลับมา
+                    tracks.append(
+                        Track(
+                            title=title,
+                            url=url,
+                            duration=duration or 0,
+                            thumbnail=entry.get("thumbnail"),
+                            uploader=entry.get("uploader", "Unknown"),
+                            view_count=entry.get("view_count"),
+                            upload_date=entry.get("upload_date"),
+                        )
+                    )
                 except Exception:
                     continue
             return tracks
@@ -667,7 +666,7 @@ class YouTubeExtractor:
             logger.error(f"YouTube search failed: {e}")
             return []
 
-    async def get_track_from_url(self, url: str) -> Optional[Dict[str, any]]:
+    async def get_track_from_url(self, url: str) -> Optional[Track]:
         try:
             url = self._clean_url(url)
             info = await self.extract_info(url)
@@ -677,20 +676,17 @@ class YouTubeExtractor:
             if not entry:
                 return None
             duration = entry.get("duration", 0)
-            # if duration and duration > MAX_TRACK_LENGTH:
-            #     return None
-            
-            # (ต้องแน่ใจว่าคลาส Track นิยามไว้)
-            # return Track(
-            #     title=entry.get("title", "Unknown Title"),
-            #     url=entry.get("webpage_url", url),
-            #     duration=duration or 0,
-            #     thumbnail=entry.get("thumbnail"),
-            #     uploader=entry.get("uploader", "Unknown"),
-            #     view_count=entry.get("view_count"),
-            #     upload_date=entry.get("upload_date"),
-            # )
-            return entry # คืนค่าดิบไปก่อน ถ้ายังไม่มีคลาส Track
+            if duration and duration > MAX_TRACK_LENGTH:
+                return None
+            return Track(
+                title=entry.get("title", "Unknown Title"),
+                url=entry.get("webpage_url", url),
+                duration=duration or 0,
+                thumbnail=entry.get("thumbnail"),
+                uploader=entry.get("uploader", "Unknown"),
+                view_count=entry.get("view_count"),
+                upload_date=entry.get("upload_date"),
+            )
         except Exception as e:
             logger.error(f"Failed to extract track from URL {url}: {e}")
             return None
@@ -712,9 +708,10 @@ class YouTubeExtractor:
     def is_playlist_url(self, url: str) -> bool:
         return "list=" in url and "youtube.com" in url
 
-    async def get_playlist_tracks(self, url: str, max_tracks: int = 50) -> List:
+    async def get_playlist_tracks(self, url: str, max_tracks: int = 50) -> List[Track]:
         try:
             logger.info(f"Extracting YouTube playlist: {url}")
+            url = self._clean_url(url)
             opts = self.ytdl_opts.copy()
             opts["extract_flat"] = "in_playlist"
             opts["noplaylist"] = False
@@ -745,22 +742,19 @@ class YouTubeExtractor:
                     if not track_info:
                         continue
                     duration = track_info.get("duration", 0)
-                    # if duration and duration > MAX_TRACK_LENGTH:
-                    #     continue
-                    
-                    # (ต้องแน่ใจว่าคลาส Track นิยามไว้)
-                    # tracks.append(
-                    #     Track(
-                    #         title=track_info.get("title", "Unknown Title"),
-                    #         url=track_info.get("webpage_url", video_url),
-                    #         duration=duration or 0,
-                    #         thumbnail=track_info.get("thumbnail"),
-                    #         uploader=track_info.get("uploader", "Unknown"),
-                    #         view_count=track_info.get("view_count"),
-                    #         upload_date=track_info.get("upload_date"),
-                    #     )
-                    # )
-                    pass # ลบ pass นี้ออกถ้าคุณเอา Track กลับมา
+                    if duration and duration > MAX_TRACK_LENGTH:
+                        continue
+                    tracks.append(
+                        Track(
+                            title=track_info.get("title", "Unknown Title"),
+                            url=track_info.get("webpage_url", video_url),
+                            duration=duration or 0,
+                            thumbnail=track_info.get("thumbnail"),
+                            uploader=track_info.get("uploader", "Unknown"),
+                            view_count=track_info.get("view_count"),
+                            upload_date=track_info.get("upload_date"),
+                        )
+                    )
                 except Exception as e:
                     logger.warning(f"Failed to extract track: {e}")
                     continue
@@ -772,7 +766,6 @@ class YouTubeExtractor:
         except Exception as e:
             logger.error(f"Playlist extraction failed: {e}")
             return []
-
 # ================================= Constants =================================
 
 SAFE_AUDIO_EXTS = (
