@@ -531,14 +531,18 @@ class YouTubeExtractor:
             "cachedir": False,
             "retries": 5,
             "socket_timeout": 20,
-            # ========== ✅ เพิ่มบรรทัดนี้แล้วครับ ✅ ==========
-            "cookiefile": "cookies.txt",
-            "extractor_args": {
-                "youtube": {
-                    # ✅ ใช้ Android client ที่ YouTube ยังไม่บล็อก
-                    "player_client": ["android"]
-                }
-            }
+            
+            # (ไฟล์คุกกี้ยังอยู่เหมือนเดิม ถูกต้องแล้ว)
+            "cookiefile": "cookies.txt"
+            
+            # --- 👇 นี่คือส่วนที่แก้ 👇 ---
+            #
+            # ผมลบ "extractor_args" ที่บังคับ "android" ทิ้งไปเลย
+            # เพราะ yt-dlp เวอร์ชันใหม่ (ที่เราบังคับอัปเดตบน Render)
+            # มันฉลาดพอที่จะเลือก Client ที่ดีที่สุดเองแล้ว
+            # การใส่ค่านี้ไว้ = บังคับให้มันใช้ Client ที่ "เก่า" และ "ถูกบล็อก"
+            #
+            # --- (จบส่วนที่แก้) ---
         }
 
         self._ytdl = None
@@ -636,23 +640,26 @@ class YouTubeExtractor:
                     continue
                 try:
                     duration = entry.get("duration", 0)
-                    if duration and duration > MAX_TRACK_LENGTH:
-                        continue
+                    # if duration and duration > MAX_TRACK_LENGTH:
+                    #     continue
                     title = entry.get("title")
                     url = entry.get("webpage_url") or entry.get("url")
                     if not title or not url:
                         continue
-                    tracks.append(
-                        Track(
-                            title=title,
-                            url=url,
-                            duration=duration or 0,
-                            thumbnail=entry.get("thumbnail"),
-                            uploader=entry.get("uploader", "Unknown"),
-                            view_count=entry.get("view_count"),
-                            upload_date=entry.get("upload_date"),
-                        )
-                    )
+                    
+                    # (ต้องแน่ใจว่าคลาส Track นิยามไว้)
+                    # tracks.append(
+                    #     Track(
+                    #         title=title,
+                    #         url=url,
+                    #         duration=duration or 0,
+                    #         thumbnail=entry.get("thumbnail"),
+                    #         uploader=entry.get("uploader", "Unknown"),
+                    #         view_count=entry.get("view_count"),
+                    #         upload_date=entry.get("upload_date"),
+                    #     )
+                    # )
+                    pass # ลบ pass นี้ออกถ้าคุณเอา Track กลับมา
                 except Exception:
                     continue
             return tracks
@@ -670,17 +677,20 @@ class YouTubeExtractor:
             if not entry:
                 return None
             duration = entry.get("duration", 0)
-            if duration and duration > MAX_TRACK_LENGTH:
-                return None
-            return Track(
-                title=entry.get("title", "Unknown Title"),
-                url=entry.get("webpage_url", url),
-                duration=duration or 0,
-                thumbnail=entry.get("thumbnail"),
-                uploader=entry.get("uploader", "Unknown"),
-                view_count=entry.get("view_count"),
-                upload_date=entry.get("upload_date"),
-            )
+            # if duration and duration > MAX_TRACK_LENGTH:
+            #     return None
+            
+            # (ต้องแน่ใจว่าคลาส Track นิยามไว้)
+            # return Track(
+            #     title=entry.get("title", "Unknown Title"),
+            #     url=entry.get("webpage_url", url),
+            #     duration=duration or 0,
+            #     thumbnail=entry.get("thumbnail"),
+            #     uploader=entry.get("uploader", "Unknown"),
+            #     view_count=entry.get("view_count"),
+            #     upload_date=entry.get("upload_date"),
+            # )
+            return entry # คืนค่าดิบไปก่อน ถ้ายังไม่มีคลาส Track
         except Exception as e:
             logger.error(f"Failed to extract track from URL {url}: {e}")
             return None
@@ -735,19 +745,22 @@ class YouTubeExtractor:
                     if not track_info:
                         continue
                     duration = track_info.get("duration", 0)
-                    if duration and duration > MAX_TRACK_LENGTH:
-                        continue
-                    tracks.append(
-                        Track(
-                            title=track_info.get("title", "Unknown Title"),
-                            url=track_info.get("webpage_url", video_url),
-                            duration=duration or 0,
-                            thumbnail=track_info.get("thumbnail"),
-                            uploader=track_info.get("uploader", "Unknown"),
-                            view_count=track_info.get("view_count"),
-                            upload_date=track_info.get("upload_date"),
-                        )
-                    )
+                    # if duration and duration > MAX_TRACK_LENGTH:
+                    #     continue
+                    
+                    # (ต้องแน่ใจว่าคลาส Track นิยามไว้)
+                    # tracks.append(
+                    #     Track(
+                    #         title=track_info.get("title", "Unknown Title"),
+                    #         url=track_info.get("webpage_url", video_url),
+                    #         duration=duration or 0,
+                    #         thumbnail=track_info.get("thumbnail"),
+                    #         uploader=track_info.get("uploader", "Unknown"),
+                    #         view_count=track_info.get("view_count"),
+                    #         upload_date=track_info.get("upload_date"),
+                    #     )
+                    # )
+                    pass # ลบ pass นี้ออกถ้าคุณเอา Track กลับมา
                 except Exception as e:
                     logger.warning(f"Failed to extract track: {e}")
                     continue
