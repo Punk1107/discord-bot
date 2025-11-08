@@ -531,6 +531,8 @@ class YouTubeExtractor:
             "cachedir": False,
             "retries": 5,
             "socket_timeout": 20,
+            # ========== ✅ เพิ่มบรรทัดนี้แล้วครับ ✅ ==========
+            "cookiefile": "cookies.txt",
             "extractor_args": {
                 "youtube": {
                     # ✅ ใช้ Android client ที่ YouTube ยังไม่บล็อก
