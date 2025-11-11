@@ -3897,3 +3897,235 @@ aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gatewa
 2025-11-08 19:33:12 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
 2025-11-08 19:36:26 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ชอบที่เธอเป็นเธอ - แทมมะริน Cover by #applelapisara x #fayesupaporn
 2025-11-08 19:36:28 | [94m__main__       [0m | [33mWARNING [0m | Voice client not connected for guild 1252561974253064273, attempting reconnection...
+2025-11-08 22:40:15 | [94m__main__       [0m | [32mINFO    [0m | ✅ Spotify integration enabled
+2025-11-08 22:40:15 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2025-11-08 22:40:15 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+2025-11-08 22:40:15 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2025-11-08 22:40:15 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Starting bot connection...
+2025-11-08 22:40:19 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2025-11-08 22:40:19 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+2025-11-08 22:40:19 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2025-11-08 22:40:19 | [94m__main__       [0m | [32mINFO    [0m | ✅ Database initialized successfully with enhanced schema
+2025-11-08 22:40:19 | [94m__main__       [0m | [32mINFO    [0m | ✅ Loaded 1 server configurations
+2025-11-08 22:40:21 | [94m__main__       [0m | [32mINFO    [0m | ✅ Synced 20 slash commands
+2025-11-08 22:40:21 | [94m__main__       [0m | [32mINFO    [0m | ✅ Bot setup completed successfully
+2025-11-08 22:40:32 | [94mdiscord.app_commands.tree[0m | [31mERROR   [0m | Ignoring exception in command 'join'
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1997, in join_command
+    await interaction.response.defer()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\interactions.py", line 858, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\webhook\async_.py", line 226, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'join' raised an exception: HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+2025-11-08 22:40:36 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2025-11-08 22:40:36 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Enhanced Music Bot v3.0 is ready!
+2025-11-08 22:40:36 | [94m__main__       [0m | [32mINFO    [0m | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+2025-11-08 22:40:36 | [94m__main__       [0m | [32mINFO    [0m | 🌐 Connected to 6 guilds
+2025-11-08 22:40:36 | [94m__main__       [0m | [32mINFO    [0m | 👥 Serving 143 users
+2025-11-08 22:40:36 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2025-11-08 22:40:36 | [94m__main__       [0m | [32mINFO    [0m | 📊 Health Check: 6 guilds, 143 users, 0 playing
+2025-11-08 22:40:45 | [94mdiscord.app_commands.tree[0m | [31mERROR   [0m | Ignoring exception in command 'play'
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 2049, in play_command
+    await interaction.response.defer()
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\interactions.py", line 858, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\webhook\async_.py", line 226, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'play' raised an exception: HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+2025-11-08 22:47:09 | [94m__main__       [0m | [32mINFO    [0m | ✅ Spotify integration enabled
+2025-11-08 22:47:09 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2025-11-08 22:47:09 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+2025-11-08 22:47:09 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2025-11-08 22:47:09 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Starting bot connection...
+2025-11-08 22:47:11 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2025-11-08 22:47:11 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+2025-11-08 22:47:11 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2025-11-08 22:47:11 | [94m__main__       [0m | [32mINFO    [0m | ✅ Database initialized successfully with enhanced schema
+2025-11-08 22:47:11 | [94m__main__       [0m | [32mINFO    [0m | ✅ Loaded 1 server configurations
+2025-11-08 22:47:13 | [94m__main__       [0m | [32mINFO    [0m | ✅ Synced 20 slash commands
+2025-11-08 22:47:13 | [94m__main__       [0m | [32mINFO    [0m | ✅ Bot setup completed successfully
+2025-11-08 22:47:17 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2025-11-08 22:47:17 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Enhanced Music Bot v3.0 is ready!
+2025-11-08 22:47:17 | [94m__main__       [0m | [32mINFO    [0m | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+2025-11-08 22:47:17 | [94m__main__       [0m | [32mINFO    [0m | 🌐 Connected to 6 guilds
+2025-11-08 22:47:17 | [94m__main__       [0m | [32mINFO    [0m | 👥 Serving 143 users
+2025-11-08 22:47:17 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2025-11-08 22:47:17 | [94m__main__       [0m | [32mINFO    [0m | 📊 Health Check: 6 guilds, 143 users, 0 playing
+2025-11-08 22:47:38 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/uC8sc0cQa9M?si=o10VUMWaMqfGJviG' by Sleepless
+2025-11-08 22:47:38 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/uC8sc0cQa9M?si=o10VUMWaMqfGJviG
+2025-11-08 22:47:40 | [94m__main__       [0m | [32mINFO    [0m | [YouTubeExtractor] Extracted playable URL: https://rr2---sn-uvu-c33er.googlevideo.com/videoplayback?expire=1762638462&ei=HmYPafS_B-zTpt8P9tj8gAI&ip=182.53.89.108&i...
+2025-11-08 22:47:40 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-08 22:47:40 | [94m__main__       [0m | [31mERROR   [0m | Failed to add track to queue: 'Track' object has no attribute 'to_dict'
+2025-11-08 22:47:42 | [94m__main__       [0m | [32mINFO    [0m | Starting playback for guild 1252561974253064273
+2025-11-08 22:47:43 | [94m__main__       [0m | [32mINFO    [0m | [YouTubeExtractor] Extracted playable URL: https://rr2---sn-uvu-c33er.googlevideo.com/videoplayback?expire=1762638464&ei=IGYPafKqGvDT3LUPntmE8Qs&ip=182.53.89.108&i...
+2025-11-08 22:47:43 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Dragon Ball GT (AMV) - Dan Dan Kokoro Hikareteku
+2025-11-08 22:47:43 | [94m__main__       [0m | [31mERROR   [0m | Failed to add to history: 'Track' object has no attribute 'to_dict'
+2025-11-08 22:48:16 | [94m__main__       [0m | [33mWARNING [0m | Voice client not connected for guild 1252561974253064273, attempting reconnection...
+2025-11-08 22:48:37 | [94m__main__       [0m | [31mERROR   [0m | Failed to reconnect voice client for guild 1252561974253064273: 
+2025-11-08 23:03:47 | [94m__main__       [0m | [32mINFO    [0m | ✅ Spotify integration enabled
+2025-11-08 23:03:47 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2025-11-08 23:03:47 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+2025-11-08 23:03:47 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2025-11-08 23:03:47 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Starting bot connection...
+2025-11-08 23:03:48 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2025-11-08 23:03:48 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+2025-11-08 23:03:48 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2025-11-08 23:03:48 | [94m__main__       [0m | [32mINFO    [0m | ✅ Database initialized successfully with enhanced schema
+2025-11-08 23:03:48 | [94m__main__       [0m | [32mINFO    [0m | ✅ Loaded 1 server configurations
+2025-11-08 23:03:48 | [94m__main__       [0m | [32mINFO    [0m | ✅ Synced 20 slash commands
+2025-11-08 23:03:48 | [94m__main__       [0m | [32mINFO    [0m | ✅ Bot setup completed successfully
+2025-11-08 23:03:52 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2025-11-08 23:03:52 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Enhanced Music Bot v3.0 is ready!
+2025-11-08 23:03:52 | [94m__main__       [0m | [32mINFO    [0m | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+2025-11-08 23:03:52 | [94m__main__       [0m | [32mINFO    [0m | 🌐 Connected to 6 guilds
+2025-11-08 23:03:52 | [94m__main__       [0m | [32mINFO    [0m | 👥 Serving 143 users
+2025-11-08 23:03:52 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2025-11-08 23:03:52 | [94m__main__       [0m | [32mINFO    [0m | 📊 Health Check: 6 guilds, 143 users, 0 playing
+2025-11-08 23:04:22 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/FouHaSb5deE?si=mCwRJg2ExfszF6pv' by Sleepless
+2025-11-08 23:04:22 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/FouHaSb5deE?si=mCwRJg2ExfszF6pv
+2025-11-08 23:04:24 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-08 23:04:25 | [94m__main__       [0m | [32mINFO    [0m | Starting playback for guild 1252561974253064273
+2025-11-08 23:04:26 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ชอบที่เธอเป็นเธอ - แทมมะริน Cover by #applelapisara x #fayesupaporn
+2025-11-08 23:05:49 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/blMPzFHfb60?si=DE2l-hNhZFvSVerM' by Sleepless
+2025-11-08 23:05:49 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/blMPzFHfb60?si=DE2l-hNhZFvSVerM
+2025-11-08 23:05:51 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-08 23:06:29 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Live Session : Blank The Series's OST. เติมคำว่ารักลงในช่องว่าง
+2025-11-08 23:10:22 | [94m__main__       [0m | [32mINFO    [0m | Queue empty for guild 1252561974253064273
+2025-11-08 23:11:07 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/dOIuqmMhedU?si=cnt_9Z4LcJWqmH-E' by Sleepless
+2025-11-08 23:11:07 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/dOIuqmMhedU?si=cnt_9Z4LcJWqmH-E
+2025-11-08 23:11:09 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-08 23:11:10 | [94m__main__       [0m | [32mINFO    [0m | Starting playback for guild 1252561974253064273
+2025-11-08 23:11:12 | [94m__main__       [0m | [32mINFO    [0m | Now playing: AAA - PARTY IT UP [Stage Mix]
+2025-11-08 23:15:30 | [94m__main__       [0m | [33mWARNING [0m | Voice client not connected for guild 1252561974253064273, attempting reconnection...
+2025-11-08 23:15:50 | [94m__main__       [0m | [31mERROR   [0m | Failed to reconnect voice client for guild 1252561974253064273: 
+2025-11-10 22:54:02 | [94m__main__       [0m | [32mINFO    [0m | ✅ Spotify integration enabled
+2025-11-10 22:54:02 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2025-11-10 22:54:02 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+2025-11-10 22:54:02 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2025-11-10 22:54:02 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Starting bot connection...
+2025-11-10 22:54:03 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2025-11-10 22:54:03 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]
+2025-11-10 22:54:03 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2025-11-10 22:54:03 | [94m__main__       [0m | [32mINFO    [0m | ✅ Database initialized successfully with enhanced schema
+2025-11-10 22:54:03 | [94m__main__       [0m | [32mINFO    [0m | ✅ Loaded 1 server configurations
+2025-11-10 22:54:04 | [94m__main__       [0m | [32mINFO    [0m | ✅ Synced 20 slash commands
+2025-11-10 22:54:04 | [94m__main__       [0m | [32mINFO    [0m | ✅ Bot setup completed successfully
+2025-11-10 22:54:08 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2025-11-10 22:54:08 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Enhanced Music Bot v3.0 is ready!
+2025-11-10 22:54:08 | [94m__main__       [0m | [32mINFO    [0m | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+2025-11-10 22:54:08 | [94m__main__       [0m | [32mINFO    [0m | 🌐 Connected to 6 guilds
+2025-11-10 22:54:08 | [94m__main__       [0m | [32mINFO    [0m | 👥 Serving 143 users
+2025-11-10 22:54:08 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2025-11-10 22:54:08 | [94m__main__       [0m | [32mINFO    [0m | 📊 Health Check: 6 guilds, 143 users, 0 playing
+2025-11-10 22:55:29 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/cSnkWzZ7ZAA?si=hF6cteU0DfpEP-8d' by Sleepless
+2025-11-10 22:55:29 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/cSnkWzZ7ZAA?si=hF6cteU0DfpEP-8d
+2025-11-10 22:55:32 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-10 22:55:33 | [94m__main__       [0m | [32mINFO    [0m | Starting playback for guild 1252561974253064273
+2025-11-10 22:55:48 | [94mdiscord.gateway[0m | [33mWARNING [0m | Shard ID None voice heartbeat blocked for more than 10 seconds
+Loop thread traceback (most recent call last):
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 3212, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 712, in run_until_complete
+    self.run_forever()
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 683, in run_forever
+    self._run_once()
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 2050, in _run_once
+    handle._run()
+  File "C:\Program Files\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1138, in wrapper
+    await self._call(interaction)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\app_commands\commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 2292, in play_command
+    await bot.play_next(interaction.guild.id)
+  File "c:\Users\Asus\Documents\Human system corporation\Music Bot Discord\Music Bot.py", line 1332, in play_next
+    source = discord.FFmpegPCMAudio(audio_url, **ffmpeg_args)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\player.py", line 346, in __init__
+    super().__init__(source, executable=executable, args=args, **subprocess_kwargs)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\player.py", line 183, in __init__
+    self._process = self._spawn_process(args, **kwargs)
+  File "C:\Users\Asus\AppData\Roaming\Python\Python313\site-packages\discord\player.py", line 206, in _spawn_process
+    process = subprocess.Popen(args, creationflags=CREATE_NO_WINDOW, **subprocess_kwargs)
+  File "C:\Program Files\Python313\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Program Files\Python313\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+
+2025-11-10 22:55:48 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Flo Rida - Whistle [Official Video]
+2025-11-10 22:56:01 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/6GUm5g8SG4o?si=JyzvHhimXenwhVa0' by Sleepless
+2025-11-10 22:56:01 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/6GUm5g8SG4o?si=JyzvHhimXenwhVa0
+2025-11-10 22:56:03 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-10 22:59:19 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/Rq1TW5PlbEY?si=Oi9vnXHj37b87Xuu' by Sleepless
+2025-11-10 22:59:19 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/Rq1TW5PlbEY?si=Oi9vnXHj37b87Xuu
+2025-11-10 22:59:21 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-10 22:59:36 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/3DQoJrGewyM?si=6n-eH2-oL38vkxvL' by Sleepless
+2025-11-10 22:59:37 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/3DQoJrGewyM?si=6n-eH2-oL38vkxvL
+2025-11-10 22:59:40 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-10 22:59:45 | [94m__main__       [0m | [32mINFO    [0m | Now playing: R. City - Locked Away (Official Video) ft. Adam Levine
+2025-11-10 23:04:12 | [94m__main__       [0m | [32mINFO    [0m | Now playing: หล่อเลย - พลพล「Official MV」
+2025-11-10 23:14:06 | [94m__main__       [0m | [32mINFO    [0m | Now playing: แสงสุดท้าย (g19fest Version) - ศิลปิน G19 #genierecords「Official MV」
+2025-11-10 23:14:08 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/iqnVTjgITuE?si=vmawdCmuNlFG0_Lv' by Sleepless
+2025-11-10 23:14:08 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/iqnVTjgITuE?si=vmawdCmuNlFG0_Lv
+2025-11-10 23:14:10 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-10 23:14:33 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/NOubzHCUt48?si=NnmFNuPDMQgO3KUu' by Sleepless
+2025-11-10 23:14:33 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/NOubzHCUt48?si=NnmFNuPDMQgO3KUu
+2025-11-10 23:14:35 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2025-11-10 23:19:24 | [94m__main__       [0m | [32mINFO    [0m | Now playing: German Soldier's Song - "Erika" (Reuploaded video)
+2025-11-10 23:22:25 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Ke$ha - Die Young (Official Video)
+2025-11-10 23:25:57 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Ke$ha - Die Young (Official Video)
+2025-11-10 23:29:31 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Ke$ha - Die Young (Official Video)
+2025-11-10 23:33:04 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Ke$ha - Die Young (Official Video)
+2025-11-10 23:36:38 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Ke$ha - Die Young (Official Video)
+2025-11-10 23:40:10 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Ke$ha - Die Young (Official Video)
+2025-11-10 23:43:45 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Ke$ha - Die Young (Official Video)
+2025-11-10 23:47:17 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Ke$ha - Die Young (Official Video)
+2025-11-10 23:50:52 | [94m__main__       [0m | [33mWARNING [0m | Voice client disconnected before playing for guild 1252561974253064273
