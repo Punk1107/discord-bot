@@ -515,16 +515,6 @@ class SpotifyExtractor:
 
 # ==================== YouTube Extractor ====================
 
-class Track:
-    def __init__(self, title, url, duration=0, thumbnail=None, uploader="Unknown", view_count=None, upload_date=None):
-        self.title = title
-        self.url = url
-        self.duration = duration
-        self.thumbnail = thumbnail
-        self.uploader = uploader
-        self.view_count = view_count
-        self.upload_date = upload_date
-
 class YouTubeExtractor:
     def __init__(self):
         self.ytdl_opts = {
@@ -541,10 +531,10 @@ class YouTubeExtractor:
             "cachedir": False,
             "retries": 5,
             "socket_timeout": 20,
-            "cookiefile": "cookies.txt",
             "extractor_args": {
                 "youtube": {
-                    "player_client": ["android"]  # ใช้ Android client เพื่อ bypass player block
+                    # ✅ ใช้ Android client ที่ YouTube ยังไม่บล็อก
+                    "player_client": ["android"]
                 }
             }
         }
@@ -562,8 +552,9 @@ class YouTubeExtractor:
     def _clean_url(self, url: str) -> str:
         try:
             if "youtube.com" in url or "youtu.be" in url:
-                # ตัด query string ที่ไม่จำเป็น
-                url = re.sub(r'[&?](list|index|start_radio|si)=[^&]*', '', url)
+                url = re.sub(r'[&?]list=[^&]*', '', url)
+                url = re.sub(r'[&?]index=[^&]*', '', url)
+                url = re.sub(r'[&?]start_radio=[^&]*', '', url)
         except Exception:
             pass
         return url
@@ -594,8 +585,9 @@ class YouTubeExtractor:
                     timeout=25.0
                 )
 
+                # ✅ Debug log URL ที่ได้มา
                 if result and "url" in result:
-                    logger.info(f"[YouTubeExtractor] Extracted playable URL: {result['url'][:120]}...")
+                    print(f"[YouTubeExtractor] Extracted playable URL: {result['url'][:120]}...")
 
                 # Cache
                 self._cache[cache_key] = (result, time.time())
@@ -666,7 +658,7 @@ class YouTubeExtractor:
             logger.error(f"YouTube search failed: {e}")
             return []
 
-    async def get_track_from_url(self, url: str) -> Optional[Track]:
+    async def get_track_from_url(self, url: str) -> Optional[Dict[str, any]]:
         try:
             url = self._clean_url(url)
             info = await self.extract_info(url)
@@ -708,10 +700,9 @@ class YouTubeExtractor:
     def is_playlist_url(self, url: str) -> bool:
         return "list=" in url and "youtube.com" in url
 
-    async def get_playlist_tracks(self, url: str, max_tracks: int = 50) -> List[Track]:
+    async def get_playlist_tracks(self, url: str, max_tracks: int = 50) -> List:
         try:
             logger.info(f"Extracting YouTube playlist: {url}")
-            url = self._clean_url(url)
             opts = self.ytdl_opts.copy()
             opts["extract_flat"] = "in_playlist"
             opts["noplaylist"] = False
@@ -766,6 +757,7 @@ class YouTubeExtractor:
         except Exception as e:
             logger.error(f"Playlist extraction failed: {e}")
             return []
+
 # ================================= Constants =================================
 
 SAFE_AUDIO_EXTS = (
@@ -3165,7 +3157,7 @@ async def on_app_command_error(interaction: discord.Interaction, error: app_comm
             await interaction.response.send_message(error_message, ephemeral=True)
     except:
         pass
-    
+
 # ==================== Main Execution ====================
 
 async def main():
@@ -3191,12 +3183,18 @@ async def main():
         try:
             logger.info("Performing graceful shutdown...")
 
-            if hasattr(bot, 'progress_tasks'):
-                for task in bot.progress_tasks.values():
-                    task.cancel()
+            for task in bot.progress_tasks.values():
+                task.cancel()
 
-            # ... (โค้ด cleanup อื่นๆ ของคุณ) ...
-            
+            if hasattr(bot, 'cleanup_task'):
+                bot.cleanup_task.cancel()
+            if hasattr(bot, 'idle_disconnect_task'):
+                bot.idle_disconnect_task.cancel()
+            if hasattr(bot, 'stats_updater'):
+                bot.stats_updater.cancel()
+            if hasattr(bot, 'memory_cleanup_task'):
+                bot.memory_cleanup_task.cancel()
+
             for vc in bot.voice_clients:
                 try:
                     await vc.disconnect()
@@ -3209,18 +3207,9 @@ async def main():
         except Exception as e:
             logger.error(f"Error during cleanup: {e}")
 
-# ==================== (ส่วนล่างสุดของไฟล์) ====================
-
 if __name__ == "__main__":
     try:
-        print("[Main] Starting services...")
-        
-        # 1. สั่งให้เว็บเซิร์ฟเวอร์ (ที่หลอก Render) ทำงานก่อน
-        webserver.start_webserver()
-        
-        # 2. รันบอท Discord (asyncio)
         asyncio.run(main())
-        
     except KeyboardInterrupt:
         print("\n🛑 Bot shutdown by user")
     except Exception as e:
