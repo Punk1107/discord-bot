@@ -1040,3 +1040,57 @@ discord.app_commands.errors.CommandInvokeError: Command 'play' raised an excepti
 2025-11-08 22:47:43 | [94m__main__       [0m | [31mERROR   [0m | Failed to add to history: 'Track' object has no attribute 'to_dict'
 2025-11-08 22:48:37 | [94m__main__       [0m | [31mERROR   [0m | Failed to reconnect voice client for guild 1252561974253064273: 
 2025-11-08 23:15:50 | [94m__main__       [0m | [31mERROR   [0m | Failed to reconnect voice client for guild 1252561974253064273: 
+2026-03-07 09:51:17 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-07 09:51:19 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-07 09:51:23 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-07 09:51:47 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-07 09:51:49 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-07 09:51:53 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017

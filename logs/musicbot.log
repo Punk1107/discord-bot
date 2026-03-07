@@ -4129,3 +4129,229 @@ Loop thread traceback (most recent call last):
 2025-11-10 23:43:45 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Ke$ha - Die Young (Official Video)
 2025-11-10 23:47:17 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Ke$ha - Die Young (Official Video)
 2025-11-10 23:50:52 | [94m__main__       [0m | [33mWARNING [0m | Voice client disconnected before playing for guild 1252561974253064273
+2026-02-20 17:50:28 | [94m__main__       [0m | [33mWARNING [0m | Spotipy not installed. Spotify features will be disabled. Install with: pip install spotipy
+2026-02-20 17:50:28 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2026-02-20 17:50:28 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]
+2026-02-20 17:50:28 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2026-02-20 17:50:28 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Starting bot connection...
+2026-02-20 17:50:29 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2026-02-20 17:50:29 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]
+2026-02-20 17:50:29 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2026-02-20 17:50:29 | [94m__main__       [0m | [32mINFO    [0m | ✅ Database initialized successfully with enhanced schema
+2026-02-20 17:50:29 | [94m__main__       [0m | [32mINFO    [0m | ✅ Loaded 0 server configurations
+2026-02-20 17:50:30 | [94m__main__       [0m | [32mINFO    [0m | ✅ Synced 20 slash commands
+2026-02-20 17:50:30 | [94m__main__       [0m | [32mINFO    [0m | ✅ Bot setup completed successfully
+2026-02-20 17:50:33 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2026-02-20 17:50:33 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Enhanced Music Bot v3.0 is ready!
+2026-02-20 17:50:33 | [94m__main__       [0m | [32mINFO    [0m | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+2026-02-20 17:50:33 | [94m__main__       [0m | [32mINFO    [0m | 🌐 Connected to 5 guilds
+2026-02-20 17:50:33 | [94m__main__       [0m | [32mINFO    [0m | 👥 Serving 108 users
+2026-02-20 17:50:33 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2026-02-20 17:50:33 | [94m__main__       [0m | [32mINFO    [0m | 📊 Health Check: 5 guilds, 108 users, 0 playing
+2026-02-20 17:50:58 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/1TqI0cadiyU?si=i299lI8MgatQXOYy' by Sleepless
+2026-02-20 17:50:58 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/1TqI0cadiyU?si=i299lI8MgatQXOYy
+2026-02-20 17:51:00 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-20 17:51:01 | [94m__main__       [0m | [32mINFO    [0m | Starting playback for guild 1252561974253064273
+2026-02-20 17:51:06 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Faye Peraya ดวงใจ  Original by Palmy
+2026-02-20 17:51:40 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/_asRieRgG1Y?si=jSwadaJ1KxMLrVVt' by Sleepless
+2026-02-20 17:51:40 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/_asRieRgG1Y?si=jSwadaJ1KxMLrVVt
+2026-02-20 17:51:42 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-20 17:51:58 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/ZylSidJ9eC8?si=uKwX6Z72jffO3m_O' by Sleepless
+2026-02-20 17:51:58 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/ZylSidJ9eC8?si=uKwX6Z72jffO3m_O
+2026-02-20 17:52:58 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/ZylSidJ9eC8?si=5EK-aKhxpgOBdyB6' by Sleepless
+2026-02-20 17:52:58 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/ZylSidJ9eC8?si=5EK-aKhxpgOBdyB6
+2026-02-20 17:53:21 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/5xwpiTf0ueo?si=nDRAjsxnV_loahpm' by Sleepless
+2026-02-20 17:53:21 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/5xwpiTf0ueo?si=nDRAjsxnV_loahpm
+2026-02-20 17:53:23 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-20 17:53:39 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/FouHaSb5deE?si=VOzvsD6ANEIsDGpy' by Sleepless
+2026-02-20 17:53:39 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/FouHaSb5deE?si=VOzvsD6ANEIsDGpy
+2026-02-20 17:53:40 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-20 17:54:39 | [94m__main__       [0m | [32mINFO    [0m | Now playing: 三代目 J Soul Brothers - R.Y.U.S.E.I. (TOWER OF WISH 2014～THE REVOLUTION～)
+2026-02-20 18:01:02 | [94m__main__       [0m | [32mINFO    [0m | Now playing: Phineas and Ferb - Come Home Perry
+2026-02-20 18:03:13 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ชอบที่เธอเป็นเธอ - แทมมะริน Cover by #applelapisara x #fayesupaporn
+2026-02-20 18:03:21 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/IShNc82BKPU?si=h0O_9hEAuivAYU-U' by Sleepless
+2026-02-20 18:03:21 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/IShNc82BKPU?si=h0O_9hEAuivAYU-U
+2026-02-20 18:03:22 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-20 18:05:16 | [94m__main__       [0m | [32mINFO    [0m | Now playing: One Piece ED「Next Stage」Color Coded Lyrics【Eng+Romaji】
+2026-02-20 18:09:22 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/Rq1TW5PlbEY?si=xYaN4OS344yrJVi_' by Sleepless
+2026-02-20 18:09:22 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/Rq1TW5PlbEY?si=xYaN4OS344yrJVi_
+2026-02-20 18:09:24 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-20 18:09:33 | [94m__main__       [0m | [32mINFO    [0m | Now playing: หล่อเลย - พลพล「Official MV」
+2026-02-20 18:16:20 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/OK7i2k6AZP8?si=tFBSVrD8Gj1SkINj' by Sleepless
+2026-02-20 18:16:20 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/OK7i2k6AZP8?si=tFBSVrD8Gj1SkINj
+2026-02-20 18:16:22 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-20 18:18:26 | [94m__main__       [0m | [32mINFO    [0m | Now playing: カラス (Karasu) - free MV (Sub Español, English, Romaji)
+2026-02-20 18:18:34 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/bczkokGiyII?si=uIMmkK2z3uTHdB65' by Sleepless
+2026-02-20 18:18:34 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/bczkokGiyII?si=uIMmkK2z3uTHdB65
+2026-02-20 18:18:35 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-20 18:22:23 | [94m__main__       [0m | [32mINFO    [0m | Now playing: 七龍珠GT Dragon Ball GT『DAN DAN 心魅かれてく』浅岡雄也 Yuya Asaoka 1996 Year LIVE
+2026-02-20 18:27:00 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/o8Z2cDFVVBc?si=0kGp3ZUt01wNM6TU' by Sleepless
+2026-02-20 18:27:00 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/o8Z2cDFVVBc?si=0kGp3ZUt01wNM6TU
+2026-02-20 18:27:01 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-20 18:27:08 | [94m__main__       [0m | [32mINFO    [0m | Now playing: 中川翔子 - 空色デイズ / THE FIRST TAKE
+2026-02-20 18:31:30 | [94m__main__       [0m | [32mINFO    [0m | Queue empty for guild 1252561974253064273
+2026-02-21 13:58:16 | [94m__main__       [0m | [33mWARNING [0m | Spotipy not installed. Spotify features will be disabled. Install with: pip install spotipy
+2026-02-21 13:58:16 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2026-02-21 13:58:16 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]
+2026-02-21 13:58:16 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2026-02-21 13:58:16 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Starting bot connection...
+2026-02-21 13:58:17 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2026-02-21 13:58:17 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]
+2026-02-21 13:58:17 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2026-02-21 13:58:17 | [94m__main__       [0m | [32mINFO    [0m | ✅ Database initialized successfully with enhanced schema
+2026-02-21 13:58:17 | [94m__main__       [0m | [32mINFO    [0m | ✅ Loaded 1 server configurations
+2026-02-21 13:58:17 | [94m__main__       [0m | [32mINFO    [0m | ✅ Synced 20 slash commands
+2026-02-21 13:58:17 | [94m__main__       [0m | [32mINFO    [0m | ✅ Bot setup completed successfully
+2026-02-21 13:58:21 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2026-02-21 13:58:21 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Enhanced Music Bot v3.0 is ready!
+2026-02-21 13:58:21 | [94m__main__       [0m | [32mINFO    [0m | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+2026-02-21 13:58:21 | [94m__main__       [0m | [32mINFO    [0m | 🌐 Connected to 5 guilds
+2026-02-21 13:58:21 | [94m__main__       [0m | [32mINFO    [0m | 👥 Serving 108 users
+2026-02-21 13:58:21 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2026-02-21 13:58:21 | [94m__main__       [0m | [32mINFO    [0m | 📊 Health Check: 5 guilds, 108 users, 0 playing
+2026-02-21 13:58:41 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/toPwaHc_pK8?si=sVkARS71kGsxonC-' by Sleepless
+2026-02-21 13:58:41 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/toPwaHc_pK8?si=sVkARS71kGsxonC-
+2026-02-21 13:58:43 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-21 13:58:44 | [94m__main__       [0m | [32mINFO    [0m | Starting playback for guild 1252561974253064273
+2026-02-21 13:58:47 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ถ้ามีใครส่งเกมนี้มา อย่าเล่นมันเด็ดขาด | คืนหลอนออนดิสคอร์ส💀
+2026-02-21 13:59:31 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/wFj7d_fnYTU?si=nF9T4rk_d7z7zOQY' by Sleepless
+2026-02-21 13:59:31 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/wFj7d_fnYTU?si=nF9T4rk_d7z7zOQY
+2026-02-21 13:59:33 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-21 14:00:18 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/MpYy6wwqxoo?si=amCL9oITCcnjHbZX' by Sleepless
+2026-02-21 14:00:18 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/MpYy6wwqxoo?si=amCL9oITCcnjHbZX
+2026-02-21 14:00:19 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-21 14:00:35 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/4RXxabY7hfQ?si=617N_UNKL820DTsA' by Sleepless
+2026-02-21 14:00:35 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/4RXxabY7hfQ?si=617N_UNKL820DTsA
+2026-02-21 14:00:36 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-21 14:00:47 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/Ovsne4_f1Kg?si=D9uzNWug6Tc2xbIb' by Sleepless
+2026-02-21 14:00:47 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/Ovsne4_f1Kg?si=D9uzNWug6Tc2xbIb
+2026-02-21 14:00:49 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-21 14:01:03 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/o8Z2cDFVVBc?si=D92lUSpZmpsfr4UJ' by Sleepless
+2026-02-21 14:01:03 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/o8Z2cDFVVBc?si=D92lUSpZmpsfr4UJ
+2026-02-21 14:01:04 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-21 14:39:26 | [94m__main__       [0m | [32mINFO    [0m | Now playing: MAN WITH A MISSION×milet - 絆ノ奇跡 / THE FIRST TAKE
+2026-02-21 14:44:15 | [94m__main__       [0m | [32mINFO    [0m | Now playing: LiSA - 紅蓮華 / THE FIRST TAKE
+2026-02-21 14:49:47 | [94m__main__       [0m | [32mINFO    [0m | Now playing: FLOW - GO!!! / THE FIRST TAKE
+2026-02-21 14:55:38 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ANISAMA FRIENDS - Butter-Fly feat. angela × オーイシマサヨシ × 奥井雅美 × TrySail × FLOW / THE FIRST TAKE
+2026-02-21 15:02:19 | [94m__main__       [0m | [32mINFO    [0m | Now playing: 中川翔子 - 空色デイズ / THE FIRST TAKE
+2026-02-21 15:06:21 | [94m__main__       [0m | [32mINFO    [0m | Queue empty for guild 1252561974253064273
+2026-02-21 15:12:43 | [94m__main__       [0m | [33mWARNING [0m | Spotify credentials not configured. Spotify features will be limited.
+2026-02-21 15:12:43 | [94m__main__       [0m | [33mWARNING [0m | Spotify credentials not configured. Set SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET in .env
+2026-02-21 15:12:43 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2026-02-21 15:12:43 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]
+2026-02-21 15:12:43 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2026-02-21 15:12:43 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Starting bot connection...
+2026-02-21 15:12:44 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2026-02-21 15:12:44 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]
+2026-02-21 15:12:44 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2026-02-21 15:12:44 | [94m__main__       [0m | [32mINFO    [0m | ✅ Database initialized successfully with enhanced schema
+2026-02-21 15:12:44 | [94m__main__       [0m | [32mINFO    [0m | ✅ Loaded 1 server configurations
+2026-02-21 15:12:45 | [94m__main__       [0m | [32mINFO    [0m | ✅ Synced 20 slash commands
+2026-02-21 15:12:45 | [94m__main__       [0m | [32mINFO    [0m | ✅ Bot setup completed successfully
+2026-02-21 15:12:49 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2026-02-21 15:12:49 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Enhanced Music Bot v3.0 is ready!
+2026-02-21 15:12:49 | [94m__main__       [0m | [32mINFO    [0m | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+2026-02-21 15:12:49 | [94m__main__       [0m | [32mINFO    [0m | 🌐 Connected to 5 guilds
+2026-02-21 15:12:49 | [94m__main__       [0m | [32mINFO    [0m | 👥 Serving 108 users
+2026-02-21 15:12:49 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2026-02-21 15:12:49 | [94m__main__       [0m | [32mINFO    [0m | 📊 Health Check: 5 guilds, 108 users, 0 playing
+2026-02-21 15:13:23 | [94m__main__       [0m | [32mINFO    [0m | Play request: 'https://youtu.be/GuTBq8XEOAY?si=B0neHt7PjxiFI_dI' by Sleepless
+2026-02-21 15:13:23 | [94m__main__       [0m | [32mINFO    [0m | Processing YouTube URL: https://youtu.be/GuTBq8XEOAY?si=B0neHt7PjxiFI_dI
+2026-02-21 15:13:25 | [94m__main__       [0m | [32mINFO    [0m | ✅ Found 1 track(s) to add
+2026-02-21 15:13:26 | [94m__main__       [0m | [32mINFO    [0m | Starting playback for guild 1252561974253064273
+2026-02-21 15:13:27 | [94m__main__       [0m | [32mINFO    [0m | Now playing: 9/11 เหตุสะเทือนโลก
+2026-02-21 15:21:32 | [94m__main__       [0m | [32mINFO    [0m | Queue empty for guild 1252561974253064273
+2026-03-07 09:50:51 | [94m__main__       [0m | [33mWARNING [0m | Spotify credentials not configured. Spotify features will be limited.
+2026-03-07 09:50:51 | [94m__main__       [0m | [33mWARNING [0m | Spotify credentials not configured. Set SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET in .env
+2026-03-07 09:50:51 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2026-03-07 09:50:51 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]
+2026-03-07 09:50:51 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2026-03-07 09:50:51 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Starting bot connection...
+2026-03-07 09:50:53 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2026-03-07 09:50:53 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]
+2026-03-07 09:50:53 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2026-03-07 09:50:53 | [94m__main__       [0m | [32mINFO    [0m | ✅ Database initialized successfully with enhanced schema
+2026-03-07 09:50:53 | [94m__main__       [0m | [32mINFO    [0m | ✅ Loaded 1 server configurations
+2026-03-07 09:50:53 | [94m__main__       [0m | [32mINFO    [0m | ✅ Synced 20 slash commands
+2026-03-07 09:50:53 | [94m__main__       [0m | [32mINFO    [0m | ✅ Bot setup completed successfully
+2026-03-07 09:50:56 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2026-03-07 09:50:56 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Enhanced Music Bot v3.0 is ready!
+2026-03-07 09:50:56 | [94m__main__       [0m | [32mINFO    [0m | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+2026-03-07 09:50:56 | [94m__main__       [0m | [32mINFO    [0m | 🌐 Connected to 5 guilds
+2026-03-07 09:50:56 | [94m__main__       [0m | [32mINFO    [0m | 👥 Serving 108 users
+2026-03-07 09:50:56 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2026-03-07 09:50:56 | [94m__main__       [0m | [32mINFO    [0m | 📊 Health Check: 5 guilds, 108 users, 0 playing
+2026-03-07 09:51:17 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-07 09:51:19 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-07 09:51:23 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-07 09:51:39 | [94m__main__       [0m | [33mWARNING [0m | Spotify credentials not configured. Spotify features will be limited.
+2026-03-07 09:51:39 | [94m__main__       [0m | [33mWARNING [0m | Spotify credentials not configured. Set SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET in .env
+2026-03-07 09:51:39 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2026-03-07 09:51:39 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]
+2026-03-07 09:51:39 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2026-03-07 09:51:39 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Starting bot connection...
+2026-03-07 09:51:40 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2026-03-07 09:51:40 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]
+2026-03-07 09:51:40 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.6.4
+2026-03-07 09:51:40 | [94m__main__       [0m | [32mINFO    [0m | ✅ Database initialized successfully with enhanced schema
+2026-03-07 09:51:40 | [94m__main__       [0m | [32mINFO    [0m | ✅ Loaded 1 server configurations
+2026-03-07 09:51:41 | [94m__main__       [0m | [32mINFO    [0m | ✅ Synced 20 slash commands
+2026-03-07 09:51:41 | [94m__main__       [0m | [32mINFO    [0m | ✅ Bot setup completed successfully
+2026-03-07 09:51:44 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2026-03-07 09:51:44 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Enhanced Music Bot v3.0 is ready!
+2026-03-07 09:51:44 | [94m__main__       [0m | [32mINFO    [0m | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+2026-03-07 09:51:44 | [94m__main__       [0m | [32mINFO    [0m | 🌐 Connected to 5 guilds
+2026-03-07 09:51:44 | [94m__main__       [0m | [32mINFO    [0m | 👥 Serving 108 users
+2026-03-07 09:51:44 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2026-03-07 09:51:44 | [94m__main__       [0m | [32mINFO    [0m | 📊 Health Check: 5 guilds, 108 users, 0 playing
+2026-03-07 09:51:47 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-07 09:51:49 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-07 09:51:53 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017

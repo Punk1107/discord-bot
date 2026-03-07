@@ -532,15 +532,6 @@ class YouTubeExtractor:
             "retries": 5,
             "socket_timeout": 20,
             "cookiefile": "cookies.txt",  # 🔥 Extract cookies from Chrome to handle age-restricted videos
-            "extractor_args": {
-                "youtube": {
-                    # ✅ ใช้ Android client ที่ YouTube ยังไม่บล็อก
-                   "player_client": ["ios"]
-                }
-            },
-            # 🔥 Additional options to handle format issues
-            "prefer_free_formats": True,
-            "merge_output_format": "webm/mp4"
         }
 
         self._ytdl = None
