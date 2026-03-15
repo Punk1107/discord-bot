@@ -165,9 +165,9 @@ logger = logging.getLogger(__name__)
 
 # Log Spotify status after logger is initialized
 if not SPOTIFY_AVAILABLE:
-    logger.warning("Spotipy not installed. Spotify features will be disabled. Install with: pip install spotipy")
+    logger.info("Spotipy not installed. Spotify features will be disabled. Install with: pip install spotipy")
 elif not (os.getenv("SPOTIFY_CLIENT_ID") and os.getenv("SPOTIFY_CLIENT_SECRET")):
-    logger.warning("Spotify credentials not configured. Spotify features will be limited.")
+    logger.info("Spotify credentials not configured. Spotify features will be limited. Set SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET in .env")
 
 # ==================== Enums & Data Classes ====================
 
@@ -379,7 +379,7 @@ class SpotifyExtractor:
                 self.spotify = None
         else:
             if SPOTIFY_AVAILABLE:
-                logger.warning("Spotify credentials not configured. Set SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET in .env")
+                logger.debug("Spotify credentials missing in .env")
 
     def is_spotify_url(self, url: str) -> bool:
         """Check if URL is a Spotify URL"""
@@ -1201,22 +1201,8 @@ class EnhancedMusicBot(commands.Bot):
         self.rate_limiter: Dict[int, Dict[int, deque]] = defaultdict(lambda: defaultdict(deque))
 
         self.idle_since: Dict[int, Optional[datetime]] = {}
-
         self._shutdown = False
 
-        self._setup_signal_handlers()
-
-    def _setup_signal_handlers(self):
-        """Setup graceful shutdown handlers"""
-        def signal_handler(signum, frame):
-            logger.info(f"Received signal {signum}, initiating graceful shutdown...")
-            self._shutdown = True
-            # Use thread-safe method to schedule shutdown in async context
-            if self.loop and self.loop.is_running():
-                self.loop.call_soon_threadsafe(lambda: asyncio.create_task(self.close()))
-
-        signal.signal(signal.SIGINT, signal_handler)
-        signal.signal(signal.SIGTERM, signal_handler)
 
     async def setup_hook(self):
         """Initialize bot components"""
@@ -3357,29 +3343,39 @@ async def main():
         try:
             logger.info("Performing graceful shutdown...")
 
-            for task in bot.progress_tasks.values():
-                task.cancel()
+            # Cancel progress tasks
+            if hasattr(bot, 'progress_tasks'):
+                for guild_id, task in list(bot.progress_tasks.items()):
+                    try:
+                        task.cancel()
+                    except Exception as e:
+                        logger.debug(f"Error cancelling progress task for {guild_id}: {e}")
 
-            if hasattr(bot, 'cleanup_task'):
-                bot.cleanup_task.cancel()
-            if hasattr(bot, 'idle_disconnect_task'):
-                bot.idle_disconnect_task.cancel()
-            if hasattr(bot, 'stats_updater'):
-                bot.stats_updater.cancel()
-            if hasattr(bot, 'memory_cleanup_task'):
-                bot.memory_cleanup_task.cancel()
+            # Cancel background loops
+            for loop_attr in ['cleanup_task', 'idle_disconnect_task', 'stats_updater', 'memory_cleanup_task']:
+                if hasattr(bot, loop_attr):
+                    try:
+                        getattr(bot, loop_attr).cancel()
+                    except Exception as e:
+                        logger.debug(f"Error cancelling {loop_attr}: {e}")
 
-            for vc in bot.voice_clients:
-                try:
-                    await vc.disconnect()
-                except (discord.HTTPException, RuntimeError) as e:
-                    logger.warning(f"Failed to disconnect voice client: {e}")
+            # Disconnect voice clients
+            if hasattr(bot, 'voice_clients'):
+                for vc in list(bot.voice_clients):
+                    try:
+                        await vc.disconnect(force=True)
+                    except Exception as e:
+                        logger.debug(f"Error disconnecting voice client: {e}")
 
-            await bot.close()
+            # Close bot connection
+            if not bot.is_closed():
+                await bot.close()
+            
             logger.info("✅ Bot closed successfully")
 
         except Exception as e:
             logger.error(f"Error during cleanup: {e}")
+            logger.debug(traceback.format_exc())
 
 if __name__ == "__main__":
     try:
