@@ -4421,3 +4421,22 @@ discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
 2026-03-07 13:06:29 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ชอบที่เธอเป็นเธอ - แทมมะริน Cover by #applelapisara x #fayesupaporn
 2026-03-07 13:08:30 | [94m__main__       [0m | [32mINFO    [0m | Now playing: ชอบที่เธอเป็นเธอ - แทมมะริน Cover by #applelapisara x #fayesupaporn
 2026-03-07 13:09:07 | [94m__main__       [0m | [32mINFO    [0m | Queue empty for guild 1252561974253064273
+2026-03-15 22:09:10 | [94m__main__       [0m | [32mINFO    [0m | Spotify credentials not configured. Spotify features will be limited. Set SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET in .env
+2026-03-15 22:09:10 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2026-03-15 22:09:10 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]
+2026-03-15 22:09:10 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.8.0a
+2026-03-15 22:09:10 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Starting bot connection...
+2026-03-15 22:09:11 | [94m__main__       [0m | [32mINFO    [0m | 🚀 Starting Enhanced YouTube Music Bot v3.0...
+2026-03-15 22:09:11 | [94m__main__       [0m | [32mINFO    [0m | 🐍 Python: 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]
+2026-03-15 22:09:11 | [94m__main__       [0m | [32mINFO    [0m | 📦 Discord.py: 2.8.0a
+2026-03-15 22:09:11 | [94m__main__       [0m | [32mINFO    [0m | ✅ Database initialized successfully with enhanced schema
+2026-03-15 22:09:11 | [94m__main__       [0m | [32mINFO    [0m | ✅ Loaded 1 server configurations
+2026-03-15 22:09:11 | [94m__main__       [0m | [32mINFO    [0m | ✅ Synced 20 slash commands
+2026-03-15 22:09:11 | [94m__main__       [0m | [32mINFO    [0m | ✅ Bot setup completed successfully
+2026-03-15 22:09:14 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2026-03-15 22:09:14 | [94m__main__       [0m | [32mINFO    [0m | 🎵 Enhanced Music Bot v3.0 is ready!
+2026-03-15 22:09:14 | [94m__main__       [0m | [32mINFO    [0m | 📊 Bot: ALL-FaraSong#9890 (ID: 1193773719219347506)
+2026-03-15 22:09:14 | [94m__main__       [0m | [32mINFO    [0m | 🌐 Connected to 5 guilds
+2026-03-15 22:09:14 | [94m__main__       [0m | [32mINFO    [0m | 👥 Serving 113 users
+2026-03-15 22:09:14 | [94m__main__       [0m | [32mINFO    [0m | ============================================================
+2026-03-15 22:09:14 | [94m__main__       [0m | [32mINFO    [0m | 📊 Health Check: 5 guilds, 113 users, 0 playing
