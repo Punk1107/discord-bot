@@ -214,3 +214,5 @@ This project is licensed under the MIT License.
 ---
 
 **Note**: This bot is designed for educational and personal use. Please respect YouTube's terms of service and copyright laws.
+
+fix logging bug
