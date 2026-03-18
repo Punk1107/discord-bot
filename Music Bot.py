@@ -1207,14 +1207,13 @@ class EnhancedMusicBot(commands.Bot):
     async def setup_hook(self):
         """Initialize bot components"""
         try:
-            logger.info("🚀 Starting Enhanced YouTube Music Bot v3.0...")
-            logger.info(f"🐍 Python: {sys.version}")
-            logger.info(f"📦 Discord.py: {discord.__version__}")
-
+            # Initialize database
             await self.db.initialize()
 
+            # Load server configurations
             await self.load_server_configs()
 
+            # Start background tasks
             if not self.cleanup_task.is_running():
                 self.cleanup_task.start()
             if not self.idle_disconnect_task.is_running():
@@ -1224,8 +1223,16 @@ class EnhancedMusicBot(commands.Bot):
             if not self.memory_cleanup_task.is_running():
                 self.memory_cleanup_task.start()
 
-            synced = await self.tree.sync()
-            logger.info(f"✅ Synced {len(synced)} slash commands")
+            # Sync slash commands with timeout to prevent hanging
+            try:
+                logger.info("📡 Syncing slash commands...")
+                async with asyncio.timeout(30.0):
+                    synced = await self.tree.sync()
+                    logger.info(f"✅ Synced {len(synced)} slash commands")
+            except asyncio.TimeoutError:
+                logger.warning("⚠️ Slash command sync timed out after 30 seconds. Continuing startup...")
+            except Exception as e:
+                logger.warning(f"⚠️ Slash command sync failed: {e}")
 
             logger.info("✅ Bot setup completed successfully")
 
@@ -3090,7 +3097,7 @@ async def stats_command(interaction: discord.Interaction):
         except (aiosqlite.Error, json.JSONDecodeError) as e:
             logger.debug(f"Could not fetch usage stats: {e}")
 
-        embed.set_footer(text="🎵 Enhanced Music Bot v3.0 • Ultra Stable Edition")
+        embed.set_footer(text="🎵 Enhanced Music Bot v4.0 • Ultra Stable Edition")
         await interaction.followup.send(embed=embed)
 
     except Exception as e:
@@ -3103,7 +3110,7 @@ async def help_command(interaction: discord.Interaction):
     await interaction.response.defer()
 
     embed = discord.Embed(
-        title="🎵 Enhanced Music Bot v3.0 - Help",
+        title="🎵 Enhanced Music Bot v4.0 - Help",
         description="**YouTube-focused music bot with professional features**",
         color=discord.Color.blue(),
         timestamp=datetime.now(timezone.utc)
@@ -3188,7 +3195,7 @@ async def help_command(interaction: discord.Interaction):
         inline=False
     )
 
-    embed.set_footer(text="🎵 Enhanced Music Bot v3.0 • Built for stability and performance • Today at " + datetime.now().strftime("%H:%M"))
+    embed.set_footer(text="🎵 Enhanced Music Bot v4.0 • Built for stability and performance • Today at " + datetime.now().strftime("%H:%M"))
     await interaction.followup.send(embed=embed)
 
 bot.tree.add_command(join_command)
@@ -3218,8 +3225,8 @@ bot.tree.add_command(help_command)
 async def on_ready():
     """Bot ready event"""
     logger.info("============================================================")
-    logger.info("🎵 Enhanced Music Bot v3.0 is ready!")
-    logger.info(f"📊 Bot: {bot.user} (ID: {bot.user.id})")
+    logger.info("🎵 Enhanced Music Bot v4.0 is now ONLINE!")
+    logger.info(f"📊 Logged in as: {bot.user} (ID: {bot.user.id})")
     logger.info(f"🌐 Connected to {len(bot.guilds)} guilds")
     logger.info(f"👥 Serving {sum(guild.member_count for guild in bot.guilds)} users")
     logger.info("============================================================")
@@ -3323,13 +3330,13 @@ async def on_app_command_error(interaction: discord.Interaction, error: app_comm
 async def main():
     """Main execution function with enhanced error handling"""
     try:
-        logger.info("🚀 Starting Enhanced YouTube Music Bot v3.0...")
+        logger.info("🚀 Starting Enhanced YouTube Music Bot v4.0...")
         logger.info(f"🐍 Python: {sys.version}")
         logger.info(f"📦 Discord.py: {discord.__version__}")
-        logger.info("🎵 Starting bot connection...")
+        logger.info("🎵 Connecting to Discord...")
 
         if not TOKEN:
-            logger.error("DISCORD_TOKEN environment variable is required")
+            logger.error("❌ DISCORD_TOKEN environment variable is missing!")
             return
 
         await bot.start(TOKEN)

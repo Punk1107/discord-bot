@@ -1094,3 +1094,84 @@ Traceback (most recent call last):
   File "C:\Users\User\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 1053, in poll_event
     raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
 discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-18 16:42:59 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-18 16:43:01 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-18 16:43:05 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-18 16:43:30 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-18 16:43:32 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-18 16:43:35 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-18 16:44:41 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-18 16:44:42 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-18 16:44:46 | [94mdiscord.voice_state[0m | [31mERROR   [0m | Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Music Bot Discord\.venv\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
